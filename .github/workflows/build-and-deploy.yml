@@ -20,7 +20,7 @@ jobs:
       - name: Build and Test
         run: |
           ng build
-          ng test --watch=false
+          ng test --browsers=ChromeHeadless --watch=false
 
   release:
     if: github.event_name == 'push'
