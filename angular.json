@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ascent-essentials": {
+    "ascent-essentials-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ascent-essentials",
+            "outputPath": "dist/ascent-essentials-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ascent-essentials:build:production"
+              "buildTarget": "ascent-essentials-frontend:build:production"
             },
             "development": {
-              "buildTarget": "ascent-essentials:build:development"
+              "buildTarget": "ascent-essentials-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ascent-essentials:build"
+            "buildTarget": "ascent-essentials-frontend:build"
           }
         },
         "test": {
