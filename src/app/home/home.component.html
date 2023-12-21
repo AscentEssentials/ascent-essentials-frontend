@@ -1,0 +1,9 @@
+<mat-grid-list cols="2" rowHeight="100px">
+  @for (tile of tiles; track tile) {
+    <mat-grid-tile
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows">
+      <img ngSrc="{{tile.imagePath}}" fill="" alt="">
+    </mat-grid-tile>
+  }
+</mat-grid-list>
