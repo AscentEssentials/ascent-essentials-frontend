@@ -1,16 +1,18 @@
 <header>
-  <mat-toolbar color="primary" class="navbar">
+  <mat-toolbar class="navbar">
     <!-- First Row -->
     <mat-toolbar-row class="first-row">
       <!-- Website Logo -->
-      <div class="logo-container">
-        <img src="../../assets/images/AE.png" alt="Website Logo" class="logo">
-      </div>
+      <img src="../../assets/images/AE.png" alt="Website Logo" class="logo">
 
       <!-- Login/Register -->
-      <div class="auth-container">
-        <button mat-button color="accent">Login</button>
-        <button mat-raised-button color="accent">Register</button>
+      <div class="login-chart-container">
+        <button mat-icon-button aria-label="Example icon button with a home icon">
+          <mat-icon>person</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
       </div>
     </mat-toolbar-row>
 
@@ -18,30 +20,23 @@
     <mat-toolbar-row class="second-row">
 
       <!-- Centered Search Bar -->
-      <div class="centered-search-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Search</mat-label>
-          <input matInput placeholder="Search for products">
-          <button mat-button matSuffix>
-            <mat-icon>search</mat-icon>
-          </button>
-        </mat-form-field>
-      </div>
-
-      <!-- Shopping Cart -->
-      <div class="cart-container">
-        <button mat-icon-button>
-          <mat-icon>shopping_cart</mat-icon>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search for products">
+        <button mat-button matSuffix>
+          <mat-icon>search</mat-icon>
         </button>
-      </div>
+      </mat-form-field>
     </mat-toolbar-row>
 
     <!-- Third Row -->
     <mat-toolbar-row class="third-row">
       <!-- Categories -->
       <div class="category-container">
-        <button mat-button>Category 1</button>
-        <button mat-button>Category 2</button>
+        <button mat-button>Climbing</button>
+        <button mat-button>Footwear</button>
+        <button mat-button>Clothing</button>
+        <button mat-button>Other Activities</button>
         <!-- Add more category buttons as needed -->
       </div>
     </mat-toolbar-row>
