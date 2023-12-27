@@ -3,8 +3,15 @@
     <mat-toolbar-row>
       <span>Ascent Essentials</span>
     </mat-toolbar-row>
-    <mat-toolbar-row>
-      <span>Second Line</span>
+    <mat-toolbar-row class="second-toolbar-row">
+      <form class="search-form">
+        <mat-form-field>
+          <input matInput type="text" class="search-field">
+        </mat-form-field>
+        <button mat-icon-button type="submit">
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
