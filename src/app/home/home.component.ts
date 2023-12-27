@@ -1,24 +1,46 @@
 import {Component} from '@angular/core';
-import {MatGridListModule} from "@angular/material/grid-list";
-import {Tile} from "./Tile";
+import {MatCardModule} from "@angular/material/card";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
+import {HomeCard} from "../home-card";
+import {HomeCardComponent} from "../home-card/home-card.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   imports: [
-    MatGridListModule,
+    MatCardModule,
+    NgOptimizedImage,
     NgForOf,
-    NgOptimizedImage
+    HomeCardComponent
   ],
   styleUrl: './home.component.sass'
 })
 export class HomeComponent {
-  tiles: Tile[] = [
-    {cols: 2, rows: 6, imagePath: './assets/images/cordeo-hpd.jpg'},
-    {cols: 1, rows: 10, imagePath: './assets/images/abbigliamento-hpm.jpg'},
-    {cols: 1, rows: 10, imagePath: './assets/images/3scarpette_generatormid.jpg'},
-    {cols: 2, rows: 6, imagePath: './assets/images/imbrago-hpd.jpg'},
-  ];
+  cards: HomeCard[] = [
+    {
+      imagePath: '../../assets/images/ropes.jpg',
+      imageDescription: "Test",
+      text: "Test",
+      isWide: true
+    },
+    {
+      imagePath: '../../assets/images/climbing_shoes.jpg',
+      imageDescription: "Test",
+      text: "Test",
+      isWide: true
+    },
+    {
+      imagePath: '../../assets/images/clothing.jpg',
+      imageDescription: "Test",
+      text: "Test",
+      isWide: true
+    },
+    {
+      imagePath: '../../assets/images/harnesses.jpg',
+      imageDescription: "Test",
+      text: "Test",
+      isWide: true
+    },
+  ]
 }
