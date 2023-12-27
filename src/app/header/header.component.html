@@ -1,17 +1,49 @@
 <header>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>Ascent Essentials</span>
+  <mat-toolbar color="primary" class="navbar">
+    <!-- First Row -->
+    <mat-toolbar-row class="first-row">
+      <!-- Website Logo -->
+      <div class="logo-container">
+        <img src="../../assets/images/AE.png" alt="Website Logo" class="logo">
+      </div>
+
+      <!-- Login/Register -->
+      <div class="auth-container">
+        <button mat-button color="accent">Login</button>
+        <button mat-raised-button color="accent">Register</button>
+      </div>
     </mat-toolbar-row>
-    <mat-toolbar-row class="second-toolbar-row">
-      <form class="search-form">
-        <mat-form-field>
-          <input matInput type="text" class="search-field">
+
+    <!-- Second Row -->
+    <mat-toolbar-row class="second-row">
+
+      <!-- Centered Search Bar -->
+      <div class="centered-search-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="Search for products">
+          <button mat-button matSuffix>
+            <mat-icon>search</mat-icon>
+          </button>
         </mat-form-field>
-        <button mat-icon-button type="submit">
-          <mat-icon>search</mat-icon>
+      </div>
+
+      <!-- Shopping Cart -->
+      <div class="cart-container">
+        <button mat-icon-button>
+          <mat-icon>shopping_cart</mat-icon>
         </button>
-      </form>
+      </div>
+    </mat-toolbar-row>
+
+    <!-- Third Row -->
+    <mat-toolbar-row class="third-row">
+      <!-- Categories -->
+      <div class="category-container">
+        <button mat-button>Category 1</button>
+        <button mat-button>Category 2</button>
+        <!-- Add more category buttons as needed -->
+      </div>
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
