@@ -1,12 +1,12 @@
 <header>
   <mat-sidenav-container class="sidenav-container" hasBackdrop="false">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="over">
-      <mat-toolbar>
+    <mat-sidenav #drawer class="side-nav" fixedInViewport="true" mode="over">
+      <mat-toolbar class="side-nav-toolbar">
         <button mat-icon-button (click)="drawer.close()"><mat-icon>close</mat-icon></button>
         CATEGORIES
       </mat-toolbar>
       <!-- Add your navigation links here -->
-      <mat-nav-list>
+      <mat-nav-list class="side-nav-list">
         <mat-list role="list">
           <mat-list-item role="listitem">CLIMBING</mat-list-item>
           <mat-list-item role="listitem">FOOTWEAR</mat-list-item>
