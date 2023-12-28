@@ -1,9 +1,5 @@
 header
-  margin-bottom: 10px
-
-.logo
-  height: 100%
-
+  margin-bottom: 20px
 
 .login-chart-container
   display: flex
@@ -11,10 +7,8 @@ header
 .first-row
   justify-content: space-between
 
-
 .second-row
   justify-content: center
-
 
 .category-container
   gap: 4rem
@@ -22,5 +16,16 @@ header
   display: flex
   justify-content: center
 
-.search-bar
-  width: 50%
+@media screen and (min-width: 768px)
+  .spacer
+    display: none
+
+  .search-bar
+    width: 50%
+
+@media screen and (max-width: 768px)
+  .third-row
+    display: none
+
+  .spacer
+    flex: 1 1 auto

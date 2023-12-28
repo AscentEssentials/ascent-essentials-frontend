@@ -6,6 +6,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatRadioModule} from "@angular/material/radio";
 
 @Component({
   selector: 'app-header',
@@ -17,7 +19,9 @@ import {FormsModule} from "@angular/forms";
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatRadioModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.sass'
