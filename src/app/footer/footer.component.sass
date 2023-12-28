@@ -1,34 +1,48 @@
 @import "../../colors"
 
 .footer
-  background-color: $neutral-gray
-  color: black
-  padding: 20px 0
+  background-color: $primary-green
+  color: white
+  padding: 20px
+
 
 .footer-content
+  background-color: $primary-green
+  color: white
   display: flex
   justify-content: space-between
 
+
 .footer-section
-  flex: 1
-  margin-right: 20px
+  width: 30%
 
-  h3
-    font-size: 1.2em
-    margin-bottom: 10px
 
-  p
-    margin: 0
+h3
+  color: white
 
-  ul
-    list-style: none
-    padding: 0
 
-    li
-      margin-bottom: 5px
+p
+  margin: 5px 0
 
-.social-icons
-  font-size: 1.5em
 
-  i
-    margin-right: 10px
+a
+  color: white
+  text-decoration: none
+
+
+a:hover
+  text-decoration: underline
+
+
+.mat-nav-list
+  list-style-type: none
+  padding: 0
+
+
+.mat-list-item
+  cursor: pointer
+  transition: background-color 0.3s
+
+
+.mat-list-item:hover
+  background-color: #555
