@@ -1,20 +1,26 @@
+@import "../../colors"
+
 header
   margin-bottom: 20px
 
 .button
-  color: white
+  color: $highlight-orange
 
 .login-chart-container
   display: flex
 
 .first-row
   justify-content: space-between
-  background-color: black
+  background-color: $primary-green
 
 .second-row
   justify-content: center
   padding-top: 50px
   padding-bottom: 30px
+  background-color: $neutral-gray
+
+.third-row
+  background-color: $neutral-gray
 
 .category-container
   gap: 4rem
@@ -22,8 +28,15 @@ header
   display: flex
   justify-content: center
 
-.sidenav
+.side-nav
   width: 100%
+
+.side-nav-toolbar
+  background-color: $primary-green
+  color: $neutral-gray
+
+.side-nav-list
+  background-color: $neutral-gray
 
 @media screen and (min-width: 768px)
   .spacer
