@@ -1,42 +1,61 @@
 <header>
-  <mat-toolbar class="navbar">
-    <!-- First Row -->
-    <mat-toolbar-row class="first-row">
-      <span></span>
-      <!-- Login/Register -->
-      <div class="login-chart-container">
-        <button mat-icon-button aria-label="Example icon button with a home icon">
-          <mat-icon>person</mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon>shopping_cart</mat-icon>
-        </button>
-      </div>
-    </mat-toolbar-row>
+  <mat-sidenav-container class="sidenav-container" hasBackdrop="false">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="over">
+      <mat-toolbar>Side Navbar</mat-toolbar>
+      <!-- Add your navigation links here -->
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <!-- Add more links as needed -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="navbar">
+        <!-- First Row -->
+        <mat-toolbar-row class="first-row">
+          <button mat-icon-button (click)="drawer.toggle()" class="button side-nav-toggle">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span></span>
+          <!-- Login/Register -->
+          <div class="login-chart-container">
+            <button mat-icon-button class="button">
+              <mat-icon>person</mat-icon>
+            </button>
+            <button mat-icon-button class="button">
+              <mat-icon>shopping_cart</mat-icon>
+            </button>
+          </div>
+        </mat-toolbar-row>
 
-    <!-- Second Row -->
-    <mat-toolbar-row class="second-row">
-      <!-- Centered Search Bar -->
-      <span class="spacer"></span>
-      <mat-form-field appearance="outline" class="search-bar">
-        <mat-label>Search</mat-label>
-        <input matInput placeholder="Search for products">
-        <button mat-button matSuffix>
-          <mat-icon>search</mat-icon>
-        </button>
-      </mat-form-field>
-    </mat-toolbar-row>
+        <!-- Second Row -->
+        <mat-toolbar-row class="second-row">
+          <!-- Centered Search Bar -->
+          <span class="spacer"></span>
+          <mat-form-field appearance="outline" class="search-bar">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Search for products">
+            <button mat-button matSuffix>
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </mat-toolbar-row>
 
-    <!-- Third Row -->
-    <mat-toolbar-row class="third-row">
-      <!-- Categories -->
-      <div class="category-container">
-        <button mat-button>CLIMBING</button>
-        <button mat-button>FOOTWEAR</button>
-        <button mat-button>CLOTHING</button>
-        <button mat-button>OTHER ACTIVITIES</button>
-        <!-- Add more category buttons as needed -->
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
+        <!-- Third Row -->
+        <mat-toolbar-row class="third-row">
+          <!-- Categories -->
+          <div class="category-container">
+            <button mat-button>CLIMBING</button>
+            <button mat-button>FOOTWEAR</button>
+            <button mat-button>CLOTHING</button>
+            <button mat-button>OTHER ACTIVITIES</button>
+            <!-- Add more category buttons as needed -->
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <!-- Your main content goes here -->
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
 </header>
