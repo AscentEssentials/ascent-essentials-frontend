@@ -21,25 +21,25 @@ export class HomeComponent {
     {
       imagePath: '../../assets/images/ropes.jpg',
       imageDescription: "Test",
-      text: "Test",
+      text: "Ropes",
       isWide: true
     },
     {
       imagePath: '../../assets/images/climbing_shoes.jpg',
       imageDescription: "Test",
-      text: "Test",
+      text: "Climbing Shoes",
       isWide: true
     },
     {
       imagePath: '../../assets/images/clothing.jpg',
       imageDescription: "Test",
-      text: "Test",
+      text: "Clothing",
       isWide: true
     },
     {
       imagePath: '../../assets/images/harnesses.jpg',
       imageDescription: "Test",
-      text: "Test",
+      text: "Harnesses",
       isWide: true
     },
   ]
