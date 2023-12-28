@@ -1,3 +1,36 @@
+## [1.1.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.0.0...1.1.0) (2023-12-28)
+
+
+### Features
+
+* add component ([61a1182](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/61a118290a595850667ed64f259f6cbb16332698))
+* add custom material theme ([20eafe3](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/20eafe3b08159e9981b2c4db6d6d351ec7a592bf))
+* add routes ([169751c](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/169751cadc5224c8a1fd80ef6ed3fb216f6141b0))
+* add side navbar ([a44ad5b](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/a44ad5b26bc929f87039261fb7c42a71ea3a896c))
+* add theme ([4f6cda6](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/4f6cda65da7932c565a9ecf75b0631b1ac6c66fc))
+* improve header ([f173964](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/f173964431d8391d17ae74bdb408d52a28b00d7e))
+* improve side navbar ([fa58ddd](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/fa58ddd6257ffc52bca778f38bc30218c2ac5192))
+
+
+### Bug Fixes
+
+* fix padding ([0580826](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/05808262ab3339286872b4dc85d115d20463cb4c))
+* improve home cards ([79b042a](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/79b042a713007e734e6d49701a819f99b041b543))
+* searchbar ([3158908](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/3158908e4e80275a95246504c735db6339cb3739))
+
+
+### Refactoring
+
+* improve design ([eb65692](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/eb656923e7f7aa377ac93c305437796da1982253))
+* improve design ([b79b392](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b79b3927c65b528828ebe6df22b9d424d085f070))
+* improve footer style ([e22ccf4](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e22ccf4d9d0c0dac351453cf9e9d2d416e0113fa))
+* improve header ([1c1b9c4](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/1c1b9c4fffd70d757ae1146439e9e542001e4dd7))
+* improve header ([0a3bba4](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/0a3bba41536bd289a97e0141c7009cb89896b58e))
+* improve home ([895e121](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/895e1215c40b5e64583a556025efee4b25d35036))
+* improve home card ([385d369](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/385d369e87bc3568d484daaa796deabc82b295c1))
+* improve home card ([45018a3](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/45018a36d3c3178f13741df3efbe4606dd1b85dc))
+* rename component ([5d128ea](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5d128eaa756a04789bb49677f84c7a4c9de264d7))
+
 ## 1.0.0 (2023-12-27)
 
 
