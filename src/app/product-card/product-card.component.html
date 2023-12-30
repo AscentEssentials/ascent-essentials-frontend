@@ -1,10 +1,10 @@
-<mat-card>
+<mat-card class="product-card">
   <img mat-card-image [src]="product?.imagePath" alt="Product Photo">
   <mat-card-content>
     <h2>{{ product?.name }}</h2>
     <p>Price: {{ product?.price }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>Buy Now</button>
+    <button mat-button class="buy-button">Buy Now</button>
   </mat-card-actions>
 </mat-card>
