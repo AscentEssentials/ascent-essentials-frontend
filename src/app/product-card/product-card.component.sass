@@ -1,11 +1,35 @@
 @import "../../colors"
 
 .product-card
-  width: 20em
-  margin: 16px
-
-.buy-button
-  background-color: $highlight-orange
+  max-width: 20em
+  margin: 15px
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+  transition: box-shadow 0.3s ease-in-out
 
 .product-card:hover
-  transform: scale(1.05)
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2)
+
+
+.product-image
+  object-fit: cover
+  height: 200px
+
+
+.product-name
+  font-size: 1.2em
+  margin-bottom: 8px
+
+
+.product-price
+  font-weight: bold
+  color: $secondary-green
+
+
+mat-card-actions
+  display: flex
+  justify-content: flex-end
+
+
+button
+  text-transform: uppercase
+  background-color: $highlight-orange
