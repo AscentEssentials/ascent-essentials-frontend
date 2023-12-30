@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {ChartComponent} from "./chart/chart.component";
+import {CartComponent} from "./cart/cart.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {CustomerAccountComponent} from "./customer-account/customer-account.component";
 import {CustomerSignupComponent} from "./customer-signup/customer-signup.component";
@@ -18,8 +18,8 @@ export const routes: Routes = [
     title: 'Home Page'
   },
   {
-    path: 'chart',
-    component: ChartComponent,
+    path: 'cart',
+    component: CartComponent,
     title: 'Chart'
   },
   {
