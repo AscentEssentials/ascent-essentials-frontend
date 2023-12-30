@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatButtonModule} from "@angular/material/button";
 import {CurrencyPipe, NgClass, NgForOf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-product',
@@ -26,12 +27,20 @@ export class ProductComponent {
   selectedQuantity: number = 1;
   currentImage: string = "../../assets/images/placeholder.jpg";
 
+  constructor(private snackBar: MatSnackBar) {}
+
   changeImage(image: string) {
     this.currentImage = image;
   }
 
   addToCart() {
     // Implement your logic for adding to the cart here
-    console.log(`Added ${this.selectedQuantity} ${this.productName}(s) to the cart.`);
+    const message = `${this.selectedQuantity} ${this.productBrand} ${this.productName}(s) added to the cart.`;
+
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      verticalPosition: 'bottom',
+      panelClass: ['custom-snackbar']
+    });
   }
 }
