@@ -5,7 +5,6 @@ import {CheckoutComponent} from "./checkout/checkout.component";
 import {CustomerAccountComponent} from "./customer-account/customer-account.component";
 import {CustomerSignupComponent} from "./customer-signup/customer-signup.component";
 import {CustomerLoginComponent} from "./customer-login/customer-login.component";
-import {OrdersHistoryComponent} from "./orders-history/orders-history.component";
 import {SupplierAccountComponent} from "./supplier-account/supplier-account.component";
 import {SupplierLoginComponent} from "./supplier-login/supplier-login.component";
 import {ProductComponent} from "./product/product.component";
@@ -41,11 +40,6 @@ export const routes: Routes = [
     path: 'customer-login',
     component: CustomerLoginComponent,
     title: 'Log In'
-  },
-  {
-    path: 'orders-history',
-    component: OrdersHistoryComponent,
-    title: 'Orders History'
   },
   {
     path: 'supplier-account',
