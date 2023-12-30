@@ -16,14 +16,54 @@ import {NgForOf} from "@angular/common";
 export class ProductsComponent {
   products: Product[] = [
     {
-      name: 'Product 1',
+      name: 'Product',
       imagePath: '../../assets/images/placeholder.jpg',
       price: 29.99,
     },
     {
-      name: 'Product 2',
+      name: 'Product',
       imagePath: '../../assets/images/placeholder.jpg',
-      price: 39.99,
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
+    },
+    {
+      name: 'Product',
+      imagePath: '../../assets/images/placeholder.jpg',
+      price: 29.99,
     },
   ];
 }
