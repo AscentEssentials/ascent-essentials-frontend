@@ -20,26 +20,26 @@ export class HomeComponent {
   cards: HomeCard[] = [
     {
       imagePath: '../../assets/images/ropes.jpg',
-      imageDescription: "Test",
-      text: "Ropes",
+      imageDescription: "ROPES",
+      text: "ROPES",
       isWide: true
     },
     {
       imagePath: '../../assets/images/climbing_shoes.jpg',
-      imageDescription: "Test",
-      text: "Climbing Shoes",
+      imageDescription: "CLIMBING SHOES",
+      text: "CLIMBING SHOES",
       isWide: true
     },
     {
       imagePath: '../../assets/images/clothing.jpg',
-      imageDescription: "Test",
-      text: "Clothing",
+      imageDescription: "CLOTHING",
+      text: "CLOTHING",
       isWide: true
     },
     {
       imagePath: '../../assets/images/harnesses.jpg',
-      imageDescription: "Test",
-      text: "Harnesses",
+      imageDescription: "HARNESSES",
+      text: "HARNESSES",
       isWide: true
     },
   ]
