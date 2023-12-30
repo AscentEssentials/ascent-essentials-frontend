@@ -1,4 +1,33 @@
+@import "../../colors"
+
+.container
+  display: flex
+  flex-wrap: wrap
+  padding: 1em
+
+.filter-column
+  flex: 1
+
+.products-column
+  flex: 2
+
 .products-container
   display: flex
   flex-wrap: wrap
   justify-content: center
+
+.price-form
+  margin-right: 1em
+
+.apply-button
+  background-color: $accent-blue
+  color: white
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 768px)
+.container
+  flex-direction: column
+
+.filter-column, .products-column
+  flex: 1
+  width: 100%

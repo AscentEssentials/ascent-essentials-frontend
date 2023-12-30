@@ -1,21 +1,28 @@
-<div class="filter-container">
-  <form [formGroup]="priceFilterForm" (ngSubmit)="applyFilter()">
-    <mat-form-field appearance="fill">
-      <mat-label>Price Range</mat-label>
-      <input matInput type="number" placeholder="Min Price" formControlName="minPrice">
-      <input matInput type="number" placeholder="Max Price" formControlName="maxPrice">
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Apply Filter</button>
-  </form>
+<div class="container">
+  <div class="filter-column">
+    <div class="filter-container">
+      <form [formGroup]="priceFilterForm" (ngSubmit)="applyFilter()">
+        <mat-form-field appearance="outline" class="price-form">
+          <mat-label>Price Range</mat-label>
+          <input matInput type="number" placeholder="Min Price" formControlName="minPrice">
+          <input matInput type="number" placeholder="Max Price" formControlName="maxPrice">
+        </mat-form-field>
+        <button mat-button type="submit" class="apply-button">Apply Filter</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="products-column">
+    <div class="products-container">
+      <app-product-card
+        *ngFor="let product of filteredProducts"
+        [product]="product"
+      ></app-product-card>
+    </div>
+    <mat-paginator [length]="filteredProducts.length"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 25, 100]"
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
 </div>
-<div class="products-container">
-  <app-product-card
-    *ngFor="let product of filteredProducts"
-    [product]="product"
-  ></app-product-card>
-</div>
-<mat-paginator [length]="filteredProducts.length"
-               [pageSize]="10"
-               [pageSizeOptions]="[5, 10, 25, 100]"
-               aria-label="Select page">
-</mat-paginator>
