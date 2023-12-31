@@ -1,3 +1,16 @@
+## [1.5.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.4.0...1.5.0) (2023-12-31)
+
+
+### Features
+
+* add checkout page ([004c100](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/004c1006eb07c54bc52338c768ca50de64379b9d))
+* improve checkout page ([0d1a5cb](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/0d1a5cb81e919af474405e491b765ce82ae67a70))
+
+
+### Tests
+
+* remove checkout tests ([35b11c8](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/35b11c8884f36bb24616b7828a5871e6a73bd81c))
+
 ## [1.4.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.3.0...1.4.0) (2023-12-31)
 
 
