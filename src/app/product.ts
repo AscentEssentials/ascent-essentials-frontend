@@ -1,5 +1,8 @@
 export interface Product {
-  imagePath: String,
+  imagesPaths: String[],
   name: String,
-  price: Number,
+  brand: String,
+  price: number,
+  description: string,
+  isAvailable: boolean,
 }
