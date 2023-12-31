@@ -1,39 +1,74 @@
 <div class="checkout-container">
   <h2>Checkout</h2>
 
-  <form>
-    <!-- Credit Card Information -->
-    <mat-form-field class="form-group">
-      <mat-label>Credit Card Number</mat-label>
-      <input matInput type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Enter your credit card number">
-    </mat-form-field>
+  <mat-horizontal-stepper [linear]="true" #stepper>
+    <!-- Step 1: Credit Card Information -->
+    <mat-step>
+      <ng-template matStepLabel>Credit Card</ng-template>
+      <form>
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>Credit Card Number</mat-label>
+          <input matInput type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Enter your credit card number">
+        </mat-form-field>
 
-    <mat-form-field class="form-group">
-      <mat-label>Expiration Date</mat-label>
-      <input matInput type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY">
-    </mat-form-field>
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>Expiration Date</mat-label>
+          <input matInput type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY">
+        </mat-form-field>
 
-    <mat-form-field class="form-group">
-      <mat-label>CCV</mat-label>
-      <input matInput type="text" id="ccv" name="ccv" placeholder="Enter CCV">
-    </mat-form-field>
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>CCV</mat-label>
+          <input matInput type="text" id="ccv" name="ccv" placeholder="Enter CCV">
+        </mat-form-field>
 
-    <!-- Address Selection or Addition -->
-    <mat-form-field class="form-group">
-      <mat-label>Select or Add Address</mat-label>
-      <mat-select id="address">
-        <mat-option value="default">Default Address</mat-option>
-        <mat-option value="new">Add New Address</mat-option>
-        <!-- Add more address options if needed -->
-      </mat-select>
-    </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary" type="button" (click)="stepper.next()">Next</button>
+        </div>
+      </form>
+    </mat-step>
 
-    <!-- Discount Code -->
-    <mat-form-field class="form-group">
-      <mat-label>Discount Code</mat-label>
-      <input matInput type="text" id="discountCode" name="discountCode" placeholder="Enter discount code">
-    </mat-form-field>
+    <!-- Step 2: Address -->
+    <mat-step>
+      <ng-template matStepLabel>Address</ng-template>
+      <form>
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>Street Address</mat-label>
+          <input matInput type="text" id="streetAddress" name="streetAddress" placeholder="Enter street address">
+        </mat-form-field>
 
-    <button mat-raised-button color="primary" type="button" (click)="executeOrder()">Execute Order</button>
-  </form>
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>City</mat-label>
+          <input matInput type="text" id="city" name="city" placeholder="Enter city">
+        </mat-form-field>
+
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>Postal Code</mat-label>
+          <input matInput type="text" id="postalCode" name="postalCode" placeholder="Enter postal code">
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button color="warn" type="button" (click)="stepper.previous()">Back</button>
+          <button mat-raised-button color="primary" type="button" (click)="stepper.next()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 3: Confirmation -->
+    <mat-step>
+      <ng-template matStepLabel>Confirmation</ng-template>
+      <form>
+        <div>
+          <p>Thank you for your order!</p>
+        </div>
+        <mat-form-field class="form-group" appearance="outline">
+          <mat-label>Coupon Code</mat-label>
+          <input matInput type="text" id="couponCode" name="couponCode" placeholder="Enter coupon code">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="warn" (click)="stepper.previous()">Back</button>
+          <button mat-raised-button color="primary" (click)="executeOrder()">Confirm Order</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
 </div>
