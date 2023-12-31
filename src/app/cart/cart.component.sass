@@ -1,3 +1,5 @@
+@import "../../colors"
+
 .cart-container
   max-width: 800px
   margin: 2rem auto
@@ -5,6 +7,10 @@
   background-color: #f9f9f9
   border-radius: 8px
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+
+
+.table-container
+  overflow-x: auto
 
 
 .product-image
@@ -31,3 +37,18 @@ mat-paginator
 
 button
   margin-top: 1rem
+
+.checkout-button
+  background-color: $highlight-orange
+
+/* Responsive Styles */
+@media screen and (max-width: 600px)
+.cart-container
+  max-width: 100%
+  padding: 0.5rem
+
+
+.product-image
+  width: 30px
+  height: 30px
+
