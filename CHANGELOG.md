@@ -1,3 +1,51 @@
+## [1.2.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.1.0...1.2.0) (2023-12-31)
+
+
+### Features
+
+* add customer-account ([51620d0](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/51620d00263ac51253a65b3de19d91d11c68e1fd))
+* add paginator and price filter in products page ([b11ebd9](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b11ebd9913b21db435fe728036cd509ef866429f))
+* add product card ([eda5ac4](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/eda5ac4c1f1e7309395761ece543cee9d7a2867e))
+* add product card in products page ([8dc63e2](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/8dc63e2f330a6f4193d5e5d92eec9d43dcec2f2b))
+* add snackbar in product page ([06d3309](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/06d330917f5307429cae7052c0732f02845d8c93))
+* add title in header ([5f1d86b](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5f1d86b92e288b9550ed2f5277773cff67cfb985))
+* define product page ([007e733](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/007e733745d3c3f264a71d3ef501be52ac19613a))
+* improve product card style ([9dddd3c](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9dddd3ce50b0adc151bc9fba78ff428211ebccde))
+
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.85 ([71947b8](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/71947b89976df0a3761502354f8e7f17edc9f3e0))
+
+
+### Bug Fixes
+
+* center product cards ([2050288](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/2050288f3ec5266cad7ca33ba0a2971d1f428bd2))
+* fix products disposition ([e907650](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e907650a2cb73801030e30f902f64d412a3dc256))
+* remove wrong heading ([bb80029](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/bb8002953d86107993ea1ff61186ad29af9a398f))
+* rename chart to cart ([dde4aef](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/dde4aefaf547b9d39d9a71a6520934313b734869))
+
+
+### Tests
+
+* remove test template ([fbe77cf](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/fbe77cfe5f7b25a9047f77b5352609e390ace096))
+
+
+### General maintenance
+
+* add images ([533d948](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/533d948363fd8ca7fdce2d07aed643af39119c71))
+* add more mock products ([f5e5e1c](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/f5e5e1cd41abd2467b660091af7a7ca4bcfd458e))
+
+
+### Refactoring
+
+* improve footer style and remove section ([e91247e](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e91247e71aefeb740b43d84e35523a676b586816))
+* improve home style ([e98a521](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e98a521ba6d9725b392bdc4b79a37b38306ad5cf))
+* improve product card style ([021ffab](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/021ffab4daa29c90f0cdbef89e05d715a79d36b2))
+* improve products page ([aea5b4d](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/aea5b4dd4fd0d711ebd906b6bfbc8de030f8e6b0))
+* remove buy button from product card ([0bcbde9](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/0bcbde9f87dd2fc910a78d238f81f6999e990b76))
+* rename image ([dc98328](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/dc983280fdc1dce744d66dcb4922d5c94473fe12))
+
 ## [1.1.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.0.0...1.1.0) (2023-12-28)
 
 
