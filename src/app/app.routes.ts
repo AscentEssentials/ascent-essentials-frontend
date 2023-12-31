@@ -3,7 +3,6 @@ import {HomeComponent} from "./home/home.component";
 import {CartComponent} from "./cart/cart.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {CustomerAccountComponent} from "./customer-account/customer-account.component";
-import {CustomerSignupComponent} from "./customer-signup/customer-signup.component";
 import {CustomerLoginComponent} from "./customer-login/customer-login.component";
 import {SupplierAccountComponent} from "./supplier-account/supplier-account.component";
 import {SupplierLoginComponent} from "./supplier-login/supplier-login.component";
@@ -30,11 +29,6 @@ export const routes: Routes = [
     path: 'customer-account',
     component: CustomerAccountComponent,
     title: 'Account'
-  },
-  {
-    path: 'customer-signup',
-    component: CustomerSignupComponent,
-    title: 'Sign Up'
   },
   {
     path: 'customer-login',
