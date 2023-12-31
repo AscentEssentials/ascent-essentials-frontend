@@ -1,3 +1,27 @@
+## [1.3.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.2.1...1.3.0) (2023-12-31)
+
+
+### Features
+
+* add cart product ([dec3c60](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/dec3c605e10a73956ef03cca5a38daf61ad2a729))
+
+
+### Bug Fixes
+
+* fix cart in mobile mode ([1c2bee4](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/1c2bee419fc90b55ffcdb7dbb9e0c8d55e87ba2e))
+* switch to primitive types in Product ([85ec7b1](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/85ec7b1529d6ce3aefcfd2ea3410c32d54109456))
+
+
+### Tests
+
+* remove cart tests ([e49d0cf](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e49d0cff810e6a300a20248bdbeb22f48dce0b67))
+
+
+### Refactoring
+
+* add more data to Product ([408e8f3](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/408e8f376aec4a0992221fe959a7647dfe44c536))
+* use Product in product component ([9afd80a](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9afd80adc3c673fcba7367b96b8f49c719643f0a))
+
 ## [1.2.1](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.2.0...1.2.1) (2023-12-31)
 
 
