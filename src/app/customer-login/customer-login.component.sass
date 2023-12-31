@@ -1,5 +1,6 @@
 .auth-container
   display: flex
+  flex-wrap: wrap /* Allow items to wrap onto the next line */
   justify-content: space-around
   max-width: 800px
   margin: 2rem auto
@@ -7,8 +8,8 @@
 
 .login-section,
 .signin-section
-  width: 45%
-
+  width: 95% /* Full width on smaller screens */
+  box-sizing: border-box /* Include padding and border in the width calculation */
 
 form
   display: flex
@@ -18,3 +19,9 @@ form
 
 mat-form-field
   width: 100%
+
+.divider
+  width: 95%
+  background-color: black
+  height: 2px
+  margin-top: 15px
