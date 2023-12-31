@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.2.0...1.2.1) (2023-12-31)
+
+
+### Bug Fixes
+
+* fix names in customer-account ([c2d3694](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/c2d3694d4a1ccb8c9a14476cf0d41db8381338f9))
+
 ## [1.2.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.1.0...1.2.0) (2023-12-31)
 
 
