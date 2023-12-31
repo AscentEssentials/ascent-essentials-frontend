@@ -31,7 +31,7 @@ export class HomeComponent {
       isWide: true
     },
     {
-      imagePath: '../../assets/images/clothing.jpg',
+      imagePath: '../../assets/images/clothing1.jpg',
       imageDescription: "CLOTHING",
       text: "CLOTHING",
       isWide: true
