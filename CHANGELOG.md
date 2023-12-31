@@ -1,3 +1,21 @@
+## [1.4.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.3.0...1.4.0) (2023-12-31)
+
+
+### Features
+
+* implement customer-login.component ([18416b6](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/18416b64cdac51024d23a7d4c99debcf37eb41af))
+
+
+### Tests
+
+* remove test for login page ([5e84968](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5e84968a5039607974b0aa29e7b95ce1513e130b))
+
+
+### Refactoring
+
+* improve login page ([8013377](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/8013377c4c45cb5fa51cf2ef5c84109f612f830a))
+* remove unused component ([55cf716](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/55cf71645db7475dc42ff7ffe5bf6fdf944f5c67))
+
 ## [1.3.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.2.1...1.3.0) (2023-12-31)
 
 
