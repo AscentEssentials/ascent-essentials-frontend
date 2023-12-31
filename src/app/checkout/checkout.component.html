@@ -1,1 +1,39 @@
-<p>checkout works!</p>
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+  <form>
+    <!-- Credit Card Information -->
+    <mat-form-field class="form-group">
+      <mat-label>Credit Card Number</mat-label>
+      <input matInput type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Enter your credit card number">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <mat-label>Expiration Date</mat-label>
+      <input matInput type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY">
+    </mat-form-field>
+
+    <mat-form-field class="form-group">
+      <mat-label>CCV</mat-label>
+      <input matInput type="text" id="ccv" name="ccv" placeholder="Enter CCV">
+    </mat-form-field>
+
+    <!-- Address Selection or Addition -->
+    <mat-form-field class="form-group">
+      <mat-label>Select or Add Address</mat-label>
+      <mat-select id="address">
+        <mat-option value="default">Default Address</mat-option>
+        <mat-option value="new">Add New Address</mat-option>
+        <!-- Add more address options if needed -->
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Discount Code -->
+    <mat-form-field class="form-group">
+      <mat-label>Discount Code</mat-label>
+      <input matInput type="text" id="discountCode" name="discountCode" placeholder="Enter discount code">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="button" (click)="executeOrder()">Execute Order</button>
+  </form>
+</div>
