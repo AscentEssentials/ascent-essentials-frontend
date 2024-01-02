@@ -1,1 +1,19 @@
-<p>supplier-login works!</p>
+<div class="supplier-login-container">
+  <h1>Supplier Login</h1>
+
+  <form>
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" id="email" name="email" placeholder="Enter your email">
+    </mat-form-field>
+
+    <mat-form-field class="form-group" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" id="password" name="password" placeholder="Enter your password">
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="button" (click)="login()">Login</button>
+    </div>
+  </form>
+</div>
