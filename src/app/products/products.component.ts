@@ -6,6 +6,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatInputModule} from "@angular/material/input";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -16,7 +17,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatPaginatorModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.sass'
