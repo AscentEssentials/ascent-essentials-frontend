@@ -8,17 +8,18 @@ import {SupplierAccountComponent} from "./supplier-account/supplier-account.comp
 import {SupplierLoginComponent} from "./supplier-login/supplier-login.component";
 import {ProductComponent} from "./product/product.component";
 import {ProductsComponent} from "./products/products.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     title: 'Home Page'
   },
   {
     path: 'cart',
     component: CartComponent,
-    title: 'Chart'
+    title: 'Cart'
   },
   {
     path: 'checkout',
@@ -54,5 +55,15 @@ export const routes: Routes = [
     path: 'products',
     component: ProductsComponent,
     title: 'Products'
+  },
+  {
+    path: '',
+    component: HomeComponent,
+    title: 'Home Page'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+    title: 'Page not found'
   },
 ];
