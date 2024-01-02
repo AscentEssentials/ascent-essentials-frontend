@@ -8,10 +8,10 @@
       <!-- Add your navigation links here -->
       <mat-nav-list class="side-nav-list">
         <mat-list role="list">
-          <mat-list-item role="listitem">CLIMBING</mat-list-item>
-          <mat-list-item role="listitem">FOOTWEAR</mat-list-item>
-          <mat-list-item role="listitem">CLOTHING</mat-list-item>
-          <mat-list-item role="listitem">OTHER ACTIVITIES</mat-list-item>
+          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">CLIMBING</mat-list-item>
+          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">FOOTWEAR</mat-list-item>
+          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">CLOTHING</mat-list-item>
+          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">OTHER ACTIVITIES</mat-list-item>
         </mat-list>
         <!-- Add more links as needed -->
       </mat-nav-list>
@@ -23,14 +23,14 @@
           <button mat-icon-button (click)="drawer.toggle()" class="button side-nav-toggle">
             <mat-icon>menu</mat-icon>
           </button>
-          <p class="title">Ascent Essentials</p>
+          <a routerLink="home" class="title">Ascent Essentials</a>
           <span></span>
           <!-- Login/Register -->
           <div class="login-chart-container">
-            <button mat-icon-button class="button">
+            <button mat-icon-button class="button" [routerLink]="'customer-account'">
               <mat-icon>person</mat-icon>
             </button>
-            <button mat-icon-button class="button">
+            <button mat-icon-button class="button" [routerLink]="'cart'">
               <mat-icon>shopping_cart</mat-icon>
             </button>
           </div>
@@ -53,10 +53,10 @@
         <mat-toolbar-row class="third-row">
           <!-- Categories -->
           <div class="category-container">
-            <button mat-button>CLIMBING</button>
-            <button mat-button>FOOTWEAR</button>
-            <button mat-button>CLOTHING</button>
-            <button mat-button>OTHER ACTIVITIES</button>
+            <button mat-button [routerLink]="'products'">CLIMBING</button>
+            <button mat-button [routerLink]="'products'">FOOTWEAR</button>
+            <button mat-button [routerLink]="'products'">CLOTHING</button>
+            <button mat-button [routerLink]="'products'">OTHER ACTIVITIES</button>
             <!-- Add more category buttons as needed -->
           </div>
         </mat-toolbar-row>
