@@ -1,0 +1,12 @@
+<div class="notifications-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Notifications</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let notification of notifications">
+        {{ notification.message }} {{ notification.timestamp }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

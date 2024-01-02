@@ -9,6 +9,7 @@ import {SupplierLoginComponent} from "./supplier-login/supplier-login.component"
 import {ProductComponent} from "./product/product.component";
 import {ProductsComponent} from "./products/products.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {NotificationsComponent} from "./notifications/notifications.component";
 
 export const routes: Routes = [
   {
@@ -55,6 +56,11 @@ export const routes: Routes = [
     path: 'products',
     component: ProductsComponent,
     title: 'Products'
+  },
+  {
+    path: 'notifications',
+    component: NotificationsComponent,
+    title: 'Notifications'
   },
   {
     path: '',
