@@ -14,10 +14,10 @@
 
   <div class="products-column">
     <div class="products-container">
-      <app-product-card
-        *ngFor="let product of filteredProducts"
-        [product]="product"
-      ></app-product-card>
+      <a routerLink="/product" *ngFor="let product of filteredProducts">
+        <app-product-card [product]="product"
+        ></app-product-card>
+      </a>
     </div>
     <mat-paginator [length]="filteredProducts.length"
                    [pageSize]="10"
