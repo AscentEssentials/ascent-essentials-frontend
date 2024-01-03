@@ -1,0 +1,13 @@
+<h1>Product Management</h1>
+
+<form [formGroup]="productForm">
+  <mat-form-field>
+    <input matInput placeholder="Name" formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Brand" formControlName="brand" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveProduct()">Save Product</button>
+</form>

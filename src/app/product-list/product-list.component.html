@@ -1,0 +1,36 @@
+<div class="search-container">
+  <mat-form-field class="search-field" appearance="outline">
+    <input matInput placeholder="Search" [(ngModel)]="searchTerm" />
+    <button mat-button matSuffix (click)="search()">Search</button>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" [routerLink]="'/product-management'">Add Product</button>
+</div>
+
+<mat-table [dataSource]="filteredProducts" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let product">{{ product.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="brand">
+    <mat-header-cell *matHeaderCellDef>Brand</mat-header-cell>
+    <mat-cell *matCellDef="let product">{{ product.brand }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <button mat-icon-button color="warn" (click)="deleteProduct(product)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+
