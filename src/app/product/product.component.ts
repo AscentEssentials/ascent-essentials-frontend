@@ -3,7 +3,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {CurrencyPipe, NgClass, NgForOf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {CartProduct} from "../cart-product";
+import {Product} from "../product";
+import {ObjectId} from "mongodb";
 
 @Component({
   selector: 'app-product',
@@ -20,16 +21,28 @@ import {CartProduct} from "../cart-product";
 })
 export class ProductComponent {
 
-  product: CartProduct = {
-    product: {
-      name: "Kataki",
-      brand: "La Sportiva",
-      imagesPaths: ["../../assets/images/placeholder.jpg", "../../assets/images/placeholder.jpg"],
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-      price: 29.90,
-      isAvailable: true,
+  product: Product = {
+    id: new ObjectId(),
+    name: "Product Name",
+    brand: "Brand Name",
+    price: 99.99,
+    subCategory: {
+      id: new ObjectId(),
+      name: "subcategory",
+      description: "description",
+      parentCategory: {
+        id: new ObjectId(),
+        name: "category",
+        description: "description"
+      },
     },
-    quantity: 1,
+    description: "Product Description",
+    technicalSpecifications: new Map([
+      ["spec1", "value1"],
+      ["spec2", "value2"],
+    ]),
+    quantity: 10,
+    images: ["image1.jpg", "image2.jpg"],
   }
 
   currentImage: string = "../../assets/images/placeholder.jpg"
@@ -42,7 +55,7 @@ export class ProductComponent {
 
   addToCart() {
     // Implement your logic for adding to the cart here
-    const message = `${this.product.quantity} ${this.product.product.brand} ${this.product.product.name}(s) added to the cart.`;
+    const message = `${this.product.quantity} ${this.product.brand} ${this.product.name}(s) added to the cart.`;
 
     this.snackBar.open(message, 'Close', {
       duration: 5000,
