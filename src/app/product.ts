@@ -1,8 +1,14 @@
+import {ObjectId} from "mongodb"
+import {Subcategory} from "./subcategory";
+
 export interface Product {
-  imagesPaths: string[],
+  id: ObjectId,
   name: string,
   brand: string,
   price: number,
+  subCategory: Subcategory,
   description: string,
-  isAvailable: boolean,
+  technicalSpecifications: Map<string, string>,
+  quantity: number,
+  images: string[],
 }
