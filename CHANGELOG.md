@@ -1,3 +1,19 @@
+## [1.7.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.6.0...1.7.0) (2024-01-03)
+
+
+### Features
+
+* add category-form component ([b49f380](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b49f3809153c4c228ff56c6a0411f7fe9964f484))
+* add category-management component ([e0d6035](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e0d603510ea121311dc67f1fbb7db76c1ab48466))
+* add new routes ([2831fde](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/2831fdee05ec51c92728db9df350a2a15c6010e9))
+* add supplier-account component ([9fc3f21](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9fc3f216520118519db1e2a050d29e60b7af0256))
+* add supplier-account component ([15c34e5](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/15c34e51310255c79a50f4d657d8c029c74c580f))
+
+
+### Tests
+
+* remove tests ([63558d3](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/63558d3db73d0633a5ebfdece9ed6b889c223901))
+
 ## [1.6.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.5.0...1.6.0) (2024-01-03)
 
 
