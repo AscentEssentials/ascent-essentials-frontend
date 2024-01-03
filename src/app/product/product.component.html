@@ -1,24 +1,24 @@
 <div class="product-details">
-  <h1 class="product-name">{{ product.product.brand }} {{ product.product.name }}</h1>
+  <h1 class="product-name">{{ product.brand }} {{ product.name }}</h1>
 
   <div class="image-container">
     <img class="product-image" [src]="currentImage" alt="Product Image">
     <div class="thumbnail-container">
-      <img *ngFor="let image of product.product.imagesPaths" class="thumbnail" [src]="image" alt="Product Thumbnail" (click)="changeImage(image)">
+      <img *ngFor="let image of product.images" class="thumbnail" [src]="image" alt="Product Thumbnail" (click)="changeImage(image)">
     </div>
   </div>
 
-  <p class="product-description">{{ product.product.description }}</p>
+  <p class="product-description">{{ product.description }}</p>
 
   <div class="product-info">
-    <p class="price">Price: {{ product.product.price | currency }}</p>
-    <p class="availability" [ngClass]="{'not-available': !product.product.isAvailable}">{{ product.product.isAvailable ? 'Available' : 'Not Available' }}</p>
+    <p class="price">Price: {{ product.price | currency }}</p>
+    <p class="availability" [ngClass]="{'not-available': false}">{{ 'Available' }}</p>
 
     <div class="quantity-container">
       <label for="quantity">Quantity:</label>
       <input type="number" id="quantity" [(ngModel)]="product.quantity" min="1" max="10">
     </div>
 
-    <button mat-button (click)="addToCart()" [disabled]="!product.product.isAvailable">Add to Cart</button>
+    <button mat-button (click)="addToCart()" [disabled]="false">Add to Cart</button>
   </div>
 </div>
