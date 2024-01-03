@@ -1,3 +1,28 @@
+## [1.6.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.5.0...1.6.0) (2024-01-03)
+
+
+### Features
+
+* add link to single product ([85d2f26](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/85d2f2633dcb36b0e359c13ccc80138fcc4b4c74))
+* add links to header ([c73f40c](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/c73f40c7467ef6913c57e11a523848c3218f2b54))
+* add notifications page ([23f479e](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/23f479e5c432410a9fa7cad3ef32bd8514659e72))
+* add page-not-found component ([0705e12](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/0705e12ae9973fd1feed21d10cedb41272446b4a))
+* add product-list and product-management components ([1a1ea33](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/1a1ea3334ac1e46e93a20fdc7bba8a3aed640fba))
+* add supplier-login component ([9c52a37](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9c52a37eb60bed993380cc511a2b95e388321a34))
+* improve routes ([332266e](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/332266e335c5456f483cee221f9bf0b16cf4ee4e))
+
+
+### Tests
+
+* remove tests ([9276f34](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9276f348657e454830be357bd8a23df95237ae65))
+* remove tests ([86b357d](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/86b357d2c3501043b89084cc4ba85b2b9fb498b2))
+
+
+### Refactoring
+
+* improve footer ([d125116](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/d125116ea6db616cbf9dc6be4dff5c8d4f207d7b))
+* remove supplier-account component ([bb2b866](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/bb2b866015bb8c8754ef7c58240d3c2f5402f1b0))
+
 ## [1.5.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.4.0...1.5.0) (2023-12-31)
 
 
