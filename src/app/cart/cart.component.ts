@@ -6,7 +6,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {Product} from "../product";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import {CartProduct} from "../cart-product";
 
 @Component({
   selector: 'app-cart',
@@ -24,41 +23,7 @@ import {CartProduct} from "../cart-product";
   styleUrl: './cart.component.sass'
 })
 export class CartComponent implements OnInit {
-  cartItems: CartProduct[] = [
-    {
-      product: {
-        imagesPaths: ['../../assets/images/placeholder.jpg'],
-        name: 'Product A',
-        brand: 'Brand A',
-        price: 19.99,
-        description: 'Description for Product A',
-        isAvailable: true,
-      },
-      quantity: 2
-    },
-    {
-      product: {
-        imagesPaths: ['../../assets/images/placeholder.jpg'],
-        name: 'Product A',
-        brand: 'Brand A',
-        price: 19.99,
-        description: 'Description for Product A',
-        isAvailable: true,
-      },
-      quantity: 2
-    },
-    {
-      product: {
-        imagesPaths: ['../../assets/images/placeholder.jpg'],
-        name: 'Product A',
-        brand: 'Brand A',
-        price: 19.99,
-        description: 'Description for Product A',
-        isAvailable: true,
-      },
-      quantity: 2
-    },
-  ];
+  cartItems: Product[] = [];
 
   total: number = 0;
   pageSizeOptions: number[] = [5, 10, 25, 50];
@@ -68,10 +33,10 @@ export class CartComponent implements OnInit {
   }
 
   updateCartTotal() {
-    this.total = this.cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+    this.total = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
-  removeFromCart(item: CartProduct) {
+  removeFromCart(item: Product) {
     const index = this.cartItems.indexOf(item);
     if (index !== -1) {
       this.cartItems.splice(index, 1);
