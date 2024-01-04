@@ -1,7 +1,7 @@
 <mat-card class="product-card">
   <img mat-card-image class="product-image" [src]="product?.images" alt="Product Photo">
   <mat-card-content>
-    <p class="product-name">{{ product?.name }}</p>
+    <p class="product-name">{{ product?.brand }} {{ product?.name }}</p>
     <p class="product-price">{{ product?.price }}$</p>
   </mat-card-content>
 </mat-card>

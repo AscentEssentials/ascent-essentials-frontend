@@ -1,7 +1,9 @@
 import {ObjectId} from "mongodb";
 
 export interface Category {
-  id: ObjectId,
+  _id: string,
   name: string,
-  description: string,
+  description?: string,
 }
+
+export interface CategoryResponse extends Category {}

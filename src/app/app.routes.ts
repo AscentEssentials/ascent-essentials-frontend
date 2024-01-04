@@ -51,7 +51,7 @@ export const routes: Routes = [
     title: 'Log In'
   },
   {
-    path: 'product',
+    path: 'product/:productId',
     component: ProductComponent,
     title: 'Product'
   },
