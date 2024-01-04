@@ -14,12 +14,12 @@
 
   <div class="products-column">
     <div class="products-container">
-      <a routerLink="/product" *ngFor="let product of filteredProducts">
-        <app-product-card [product]="product"
-        ></app-product-card>
+      <a *ngFor="let product of products"
+         [routerLink]="['/product', product._id]">
+        <app-product-card [product]="product"></app-product-card>
       </a>
     </div>
-    <mat-paginator [length]="filteredProducts.length"
+    <mat-paginator [length]="products.length"
                    [pageSize]="10"
                    [pageSizeOptions]="[5, 10, 25, 100]"
                    aria-label="Select page">

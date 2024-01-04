@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatButtonModule} from "@angular/material/button";
 import {CurrencyPipe, NgClass, NgForOf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Product} from "../product";
-import {ObjectId} from "mongodb";
+import {HttpClientModule} from "@angular/common/http";
+import {ActivatedRoute} from "@angular/router";
+import {ProductService} from "../product.service";
 
 @Component({
   selector: 'app-product',
@@ -14,47 +16,36 @@ import {ObjectId} from "mongodb";
     NgClass,
     FormsModule,
     CurrencyPipe,
-    NgForOf
+    NgForOf,
+    HttpClientModule
   ],
+  providers: [ProductService],
   templateUrl: './product.component.html',
   styleUrl: './product.component.sass'
 })
-export class ProductComponent {
-
-  product: Product = {
-    id: new ObjectId(),
-    name: "Product Name",
-    brand: "Brand Name",
-    price: 99.99,
-    subCategory: {
-      id: new ObjectId(),
-      name: "subcategory",
-      description: "description",
-      parentCategory: {
-        id: new ObjectId(),
-        name: "category",
-        description: "description"
-      },
-    },
-    description: "Product Description",
-    technicalSpecifications: new Map([
-      ["spec1", "value1"],
-      ["spec2", "value2"],
-    ]),
-    quantity: 10,
-    images: ["image1.jpg", "image2.jpg"],
-  }
+export class ProductComponent implements OnInit {
+  product!: Product
+  productId!: string
 
   currentImage: string = "../../assets/images/placeholder.jpg"
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private route: ActivatedRoute, private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+        this.productId = params['productId']
+        this.productService.getProductById(this.productId).subscribe(product =>
+          this.product = product
+        )
+      }
+    )
+  }
 
   changeImage(image: string) {
     this.currentImage = image;
   }
 
   addToCart() {
-    // Implement your logic for adding to the cart here
     const message = `${this.product.quantity} ${this.product.brand} ${this.product.name}(s) added to the cart.`;
 
     this.snackBar.open(message, 'Close', {

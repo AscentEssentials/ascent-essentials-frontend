@@ -5,7 +5,7 @@ import {environment} from "../environments/environment";
   providedIn: 'root'
 })
 export class SubcategoryService {
-  url = environment.apiUrl
+  apiUrl = environment.apiUrl
 
   constructor() { }
 }

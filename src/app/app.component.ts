@@ -12,5 +12,4 @@ import {FooterComponent} from "./footer/footer.component";
   styleUrl: './app.component.sass'
 })
 export class AppComponent {
-  title = 'Ascent Essentials';
 }
