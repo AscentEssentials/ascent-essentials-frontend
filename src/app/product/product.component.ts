@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatButtonModule} from "@angular/material/button";
-import {CurrencyPipe, NgClass, NgForOf} from "@angular/common";
+import {CurrencyPipe, NgClass, NgForOf, NgOptimizedImage} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Product} from "../product";
@@ -17,7 +17,8 @@ import {ProductService} from "../product.service";
     FormsModule,
     CurrencyPipe,
     NgForOf,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [ProductService],
   templateUrl: './product.component.html',
@@ -34,15 +35,17 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
         this.productId = params['productId']
-        this.productService.getProductById(this.productId).subscribe(product =>
+        this.productService.getProductById(this.productId).subscribe(product => {
           this.product = product
+          this.currentImage = "http://localhost:3000/product/image/" + product.images[0]
+          }
         )
       }
     )
   }
 
   changeImage(image: string) {
-    this.currentImage = image;
+    this.currentImage = "http://localhost:3000/product/image/" + image;
   }
 
   addToCart() {
