@@ -11,7 +11,7 @@
           <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">CLIMBING</mat-list-item>
           <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">FOOTWEAR</mat-list-item>
           <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">CLOTHING</mat-list-item>
-          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">OTHER ACTIVITIES</mat-list-item>
+          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">MORE ACTIVITIES</mat-list-item>
         </mat-list>
         <!-- Add more links as needed -->
       </mat-nav-list>
@@ -59,7 +59,7 @@
             <button mat-button [routerLink]="'products'">CLIMBING</button>
             <button mat-button [routerLink]="'products'">FOOTWEAR</button>
             <button mat-button [routerLink]="'products'">CLOTHING</button>
-            <button mat-button [routerLink]="'products'">OTHER ACTIVITIES</button>
+            <button mat-button [routerLink]="'products'">MORE ACTIVITIES</button>
             <!-- Add more category buttons as needed -->
           </div>
         </mat-toolbar-row>
@@ -68,5 +68,4 @@
       <ng-content></ng-content>
     </mat-sidenav-content>
   </mat-sidenav-container>
-
 </header>

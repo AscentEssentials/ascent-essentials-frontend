@@ -2,9 +2,9 @@
   <h1 class="product-name">{{ product.brand }} {{ product.name }}</h1>
 
   <div class="image-container">
-    <img class="product-image" [src]="currentImage" alt="Product Image">
+    <img class="product-image" [src]="currentImage" alt="{{product.name}}">
     <div class="thumbnail-container">
-      <img *ngFor="let image of product.images" class="thumbnail" [src]="image" alt="Product Thumbnail" (click)="changeImage(image)">
+      <img *ngFor="let image of product.images" class="thumbnail" src="http://localhost:3000/product/image/{{image}}" alt="{{product.name}}" (click)="changeImage(image)">
     </div>
   </div>
 
@@ -16,7 +16,7 @@
 
     <div class="quantity-container">
       <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" [(ngModel)]="product.quantity" min="1" max="10">
+      <input type="number" id="quantity" min="1" max="10">
     </div>
 
     <button mat-button (click)="addToCart()" [disabled]="false">Add to Cart</button>
