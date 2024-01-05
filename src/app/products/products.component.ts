@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../product";
 import {ProductCardComponent} from "../product-card/product-card.component";
 import {NgForOf} from "@angular/common";
@@ -27,8 +27,8 @@ import {RouterLink} from "@angular/router";
   templateUrl: './products.component.html',
   styleUrl: './products.component.sass'
 })
-export class ProductsComponent implements OnInit {
-  products: Product[] = [];
+export class ProductsComponent{
+  @Input() products: Product[] = []
 
   filteredProducts: Product[]
   priceFilterForm: FormGroup;
@@ -39,12 +39,6 @@ export class ProductsComponent implements OnInit {
       maxPrice: [100],
     });
     this.filteredProducts = [...this.products]
-  }
-
-  ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(products => {
-      this.products = products
-    })
   }
 
   applyFilter() {

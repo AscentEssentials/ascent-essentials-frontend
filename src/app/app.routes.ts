@@ -11,8 +11,8 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {NotificationsComponent} from "./notifications/notifications.component";
 import {ProductListComponent} from "./product-list/product-list.component";
 import {ProductManagementComponent} from "./product-management/product-management.component";
-import {SupplierAccountComponent} from "./supplier-account/supplier-account.component";
-import {CategoryManagementComponent} from "./category-management/category-management.component";
+import {CategoryProductsComponent} from "./category-products/category-products.component";
+import {SubcategoryProductsComponent} from "./subcategory-products/subcategory-products.component";
 
 export const routes: Routes = [
   {
@@ -36,11 +36,6 @@ export const routes: Routes = [
     title: 'Account'
   },
   {
-    path: 'supplier-account',
-    component: SupplierAccountComponent,
-    title: 'Account'
-  },
-  {
     path: 'customer-login',
     component: CustomerLoginComponent,
     title: 'Log In'
@@ -56,7 +51,17 @@ export const routes: Routes = [
     title: 'Product'
   },
   {
-    path: 'products',
+    path: 'products/category/:categoryId',
+    component: CategoryProductsComponent,
+    title: 'Products'
+  },
+  {
+    path: 'products/subcategory/:subcategoryId',
+    component: SubcategoryProductsComponent,
+    title: 'Products'
+  },
+  {
+    path: 'products/search',
     component: ProductsComponent,
     title: 'Products'
   },
@@ -74,11 +79,6 @@ export const routes: Routes = [
     path: 'product-management',
     component: ProductManagementComponent,
     title: 'Product Management'
-  },
-  {
-    path: 'category-management',
-    component: CategoryManagementComponent,
-    title: 'Category Management'
   },
   {
     path: '',

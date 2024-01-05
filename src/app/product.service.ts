@@ -17,11 +17,11 @@ export class ProductService {
   }
 
   getProductsByCategory(subcategoryId: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/products/subcategory/${subcategoryId}`);
+    return this.http.get<Product[]>(`${this.apiUrl}/products/category/${subcategoryId}`);
   }
 
   getProductsBySubcategory(categoryId: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/products/category/${categoryId}`);
+    return this.http.get<Product[]>(`${this.apiUrl}/products/subcategory/${categoryId}`);
   }
 
   getProductById(productId: string): Observable<Product> {
