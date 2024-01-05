@@ -45,8 +45,8 @@
           <span class="spacer"></span>
           <mat-form-field appearance="outline" class="search-bar">
             <mat-label>Search</mat-label>
-            <input matInput placeholder="Search for products">
-            <button mat-button matSuffix>
+            <input matInput [(ngModel)]="query" placeholder="Search for products">
+            <button mat-button matSuffix routerLink="products/search/{{query}}">
               <mat-icon>search</mat-icon>
             </button>
           </mat-form-field>

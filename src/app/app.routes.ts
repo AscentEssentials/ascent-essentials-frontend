@@ -13,6 +13,7 @@ import {ProductListComponent} from "./product-list/product-list.component";
 import {ProductManagementComponent} from "./product-management/product-management.component";
 import {CategoryProductsComponent} from "./category-products/category-products.component";
 import {SubcategoryProductsComponent} from "./subcategory-products/subcategory-products.component";
+import {SearchProductsComponent} from "./search-products/search-products.component";
 
 export const routes: Routes = [
   {
@@ -61,8 +62,8 @@ export const routes: Routes = [
     title: 'Products'
   },
   {
-    path: 'products/search',
-    component: ProductsComponent,
+    path: 'products/search/:query',
+    component: SearchProductsComponent,
     title: 'Products'
   },
   {
