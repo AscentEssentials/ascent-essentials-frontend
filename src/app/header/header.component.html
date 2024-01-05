@@ -8,10 +8,10 @@
       <!-- Add your navigation links here -->
       <mat-nav-list class="side-nav-list">
         <mat-list role="list">
-          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">CLIMBING</mat-list-item>
-          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">FOOTWEAR</mat-list-item>
-          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">CLOTHING</mat-list-item>
-          <mat-list-item role="listitem" routerLink="products" (click)="drawer.close()">MORE ACTIVITIES</mat-list-item>
+          <mat-list-item role="listitem" routerLink="/products/category/{{climbingCategoryId}}" (click)="drawer.close()">CLIMBING</mat-list-item>
+          <mat-list-item role="listitem" routerLink="/products/category/{{footwearCategoryId}}" (click)="drawer.close()">FOOTWEAR</mat-list-item>
+          <mat-list-item role="listitem" routerLink="/products/category/{{clothingCategoryId}}" (click)="drawer.close()">CLOTHING</mat-list-item>
+          <mat-list-item role="listitem" routerLink="/products/category/{{moreActivitiesCategoryId}}" (click)="drawer.close()">MORE ACTIVITIES</mat-list-item>
         </mat-list>
         <!-- Add more links as needed -->
       </mat-nav-list>
@@ -56,10 +56,10 @@
         <mat-toolbar-row class="third-row">
           <!-- Categories -->
           <div class="category-container">
-            <button mat-button [routerLink]="'products'">CLIMBING</button>
-            <button mat-button [routerLink]="'products'">FOOTWEAR</button>
-            <button mat-button [routerLink]="'products'">CLOTHING</button>
-            <button mat-button [routerLink]="'products'">MORE ACTIVITIES</button>
+            <button mat-button routerLink="/products/category/{{climbingCategoryId}}">CLIMBING</button>
+            <button mat-button routerLink="/products/category/{{footwearCategoryId}}">FOOTWEAR</button>
+            <button mat-button routerLink="/products/category/{{clothingCategoryId}}">CLOTHING</button>
+            <button mat-button routerLink="/products/category/{{moreActivitiesCategoryId}}">MORE ACTIVITIES</button>
             <!-- Add more category buttons as needed -->
           </div>
         </mat-toolbar-row>
