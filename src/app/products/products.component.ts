@@ -33,7 +33,7 @@ export class ProductsComponent{
   filteredProducts: Product[]
   priceFilterForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private productService: ProductService) {
+  constructor(private formBuilder: FormBuilder) {
     this.priceFilterForm = this.formBuilder.group({
       minPrice: [0],
       maxPrice: [100],

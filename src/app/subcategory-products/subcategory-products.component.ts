@@ -28,6 +28,6 @@ export class SubcategoryProductsComponent implements OnInit {
       this.productService.getProductsBySubcategory(this.subcategoryId).subscribe(products => {
         this.products = products
       })
-    });
+    })
   }
 }

@@ -37,6 +37,7 @@ export class HeaderComponent implements OnInit {
   footwearCategoryId: string = ""
   clothingCategoryId: string = ""
   moreActivitiesCategoryId: string = ""
+  query: string = ""
 
   constructor(private categoryService: CategoryService) {}
 
