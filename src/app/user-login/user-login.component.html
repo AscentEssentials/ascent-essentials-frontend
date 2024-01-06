@@ -1,0 +1,65 @@
+<div class="auth-container">
+  <div class="login-section">
+    <h1>Log In</h1>
+    <form>
+      <mat-form-field  appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Enter your email" [formControl]="loginUserName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Enter your password" [formControl]="loginUserPassword">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" (click)="login()">Log In</button>
+    </form>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="signin-section">
+    <h1>Sign In</h1>
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Enter your name" id="name" [formControl]="registerUserName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Surname</mat-label>
+        <input matInput type="text" placeholder="Enter your surname" id="surname" [formControl]="registerUserSurname">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Enter your email" id="email" [formControl]="registerUserEmail">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Enter your password" id="password" [formControl]="registerUserPassword">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" placeholder="Enter your address" id="address" [formControl]="registerUserAddress">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address Number</mat-label>
+        <input matInput type="text" placeholder="Enter your address number" id="addressNumber" [formControl]="registerUserAddressNumber">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>ZIP Code</mat-label>
+        <input matInput type="text" placeholder="Enter your ZIP code" id="zipCode" [formControl]="registerUserZipCode">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Telephone Number</mat-label>
+        <input matInput type="tel" placeholder="Enter your telephone number" id="telephone" [formControl]="registerUserTelephoneNumber">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="button" (click)="registerUser()">Sign In</button>
+    </form>
+  </div>
+</div>

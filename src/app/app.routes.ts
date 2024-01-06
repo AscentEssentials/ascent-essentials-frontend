@@ -3,8 +3,7 @@ import {HomeComponent} from "./home/home.component";
 import {CartComponent} from "./cart/cart.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {CustomerAccountComponent} from "./customer-account/customer-account.component";
-import {CustomerLoginComponent} from "./customer-login/customer-login.component";
-import {SupplierLoginComponent} from "./supplier-login/supplier-login.component";
+import {UserLoginComponent} from "./user-login/user-login.component";
 import {ProductComponent} from "./product/product.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {NotificationsComponent} from "./notifications/notifications.component";
@@ -39,13 +38,8 @@ export const routes: Routes = [
     title: 'Account'
   },
   {
-    path: 'customer-login',
-    component: CustomerLoginComponent,
-    title: 'Log In'
-  },
-  {
-    path: 'supplier-login',
-    component: SupplierLoginComponent,
+    path: 'user-login',
+    component: UserLoginComponent,
     title: 'Log In'
   },
   {
