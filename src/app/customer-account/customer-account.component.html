@@ -1,27 +1,29 @@
 <div class="account-data-container">
   <h1>Your account</h1>
 
+  <button mat-button (click)="logout()">Logout</button>
+
   <div class="account-info">
     <div>
-      <strong>Name:</strong> {{ name }}
+      <strong>Name:</strong> {{ customer?.name }}
     </div>
     <div>
-      <strong>Surname:</strong> {{ surname }}
+      <strong>Surname:</strong> {{ customer?.surname }}
     </div>
     <div>
-      <strong>Email:</strong> {{ email }}
+      <strong>Email:</strong> {{ customer?.email }}
     </div>
     <div>
-      <strong>Address:</strong> {{ address }}
+      <strong>Address:</strong> {{ customer?.address }}
     </div>
     <div>
-      <strong>Number:</strong> {{ number }}
+      <strong>Address number:</strong> {{ customer?.addressNumber }}
     </div>
     <div>
-      <strong>ZIP Code:</strong> {{ zip }}
+      <strong>ZIP Code:</strong> {{ customer?.zipCode }}
     </div>
     <div>
-      <strong>Telephone Number:</strong> {{ phoneNumber }}
+      <strong>Telephone Number:</strong> {{ customer?.telephoneNumber }}
     </div>
   </div>
 
