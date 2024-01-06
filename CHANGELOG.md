@@ -1,3 +1,10 @@
+## [1.10.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.9.0...1.10.0) (2024-01-06)
+
+
+### Features
+
+* now it is possible to logout ([86dabae](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/86dabae5bc470672a34039216a31dc671cbc4d2b))
+
 ## [1.9.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.8.0...1.9.0) (2024-01-06)
 
 
