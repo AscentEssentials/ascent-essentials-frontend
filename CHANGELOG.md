@@ -1,3 +1,50 @@
+## [1.8.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.7.0...1.8.0) (2024-01-06)
+
+
+### Features
+
+* add category-products and subcategory-products ([5d2e747](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5d2e747f33064edaec43e1b7a9bdf7577c42bfae))
+* add environment ([35dbab2](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/35dbab2522cc417e160a7efefd5ff1b07ec9d9ff))
+* add interfaces ([b76241a](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b76241ab97f86f526b788974b1060610731aaa33))
+* add new components ([295c900](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/295c900b6df7fe382077699662121e071fa31a4b))
+* add services ([c58278b](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/c58278bcf8827e9f7d2a7b2e5394756e5b0a00a2))
+* add url in services ([8864775](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/8864775e7d64721417fb53f1b3ddc40fe91c432b))
+* implement part of product service ([f0c3b26](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/f0c3b26f9417f47247efb8ec0c1ce4b7144b1723))
+* now header takes categories ids ([2dc4c08](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/2dc4c08842b17b5c869783632f4b4c629ba5af32))
+* now it is possible to search for products ([b6c199c](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b6c199ccda1fe2fc6ef1bc0a87bf077fdd7e7640))
+
+
+### Dependency updates
+
+* **deps:** add mongodb ([7cb18a7](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/7cb18a7c56b9f73d53d872bd51f799d86ef728da))
+
+
+### Bug Fixes
+
+* now product images are displayed correctly ([d0934ba](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/d0934ba8d697f049b30d1a5080ba3afc4c8abc00))
+
+
+### Tests
+
+* remove tests ([a3fc5c6](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/a3fc5c64a4c8204120d4d20e021663ef3f6695db))
+
+
+### Build and continuous integration
+
+* remove check job ([2f6cfb9](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/2f6cfb9aa87edec3ba4b2fdd7ff8d4c9c88f8528))
+
+
+### General maintenance
+
+* add ngx-cookie-service ([e338c1e](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/e338c1e261683412ed3caf4a49f00747b419c143))
+
+
+### Refactoring
+
+* adapt components to new interfaces ([b5a2c57](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b5a2c57ff5d46b68155e903f57d13943df1ce67b))
+* fix services names ([5662ffd](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5662ffd005105923d85988640c8803111ad59bbc))
+* merge CartProduct and Product ([9df99f4](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9df99f4e8a7fe60f5ff6774221ff44cb532b9c2c))
+
 ## [1.7.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.6.0...1.7.0) (2024-01-03)
 
 
