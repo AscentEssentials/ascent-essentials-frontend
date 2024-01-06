@@ -1,3 +1,10 @@
+## [1.9.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.8.0...1.9.0) (2024-01-06)
+
+
+### Features
+
+* now it is possible for users to register and login ([295ae7c](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/295ae7cd34a14e55207a6e62488be2c8f8592820))
+
 ## [1.8.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.7.0...1.8.0) (2024-01-06)
 
 
