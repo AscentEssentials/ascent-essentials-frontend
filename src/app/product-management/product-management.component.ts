@@ -44,7 +44,7 @@ export class ProductManagementComponent {
   saveProduct(): void {
     if (this.productForm.valid) {
       this.snackBar.open('Product saved successfully', 'OK', { duration: 2000 });
-      this.router.navigate(['/product-list'])
+      this.router.navigate(['/products-management'])
     } else {
       this.snackBar.open('Please fill in all required fields', 'OK', { duration: 2000 });
     }
