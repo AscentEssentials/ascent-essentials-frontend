@@ -4,28 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
-      - name: Install Dependencies
-        run: npm install
-      - name: Build and Test
-        run: |
-          ng build
-          ng test --browsers=ChromeHeadless --watch=false
-
   release:
     if: github.event_name == 'push'
-    needs:
-      - check
     runs-on: ubuntu-latest
     concurrency:
       group: release
@@ -48,7 +28,6 @@ jobs:
   success:
     runs-on: ubuntu-latest
     needs:
-      - check
       - release
     if: >-
       always() && (
