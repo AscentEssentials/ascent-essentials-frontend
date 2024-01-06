@@ -9,11 +9,10 @@ import {FormsModule} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {ProductManagementComponent} from "../product-management/product-management.component";
 import {RouterLink} from "@angular/router";
 
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-products-management',
   standalone: true,
   imports: [
     MatFormFieldModule,
@@ -25,10 +24,10 @@ import {RouterLink} from "@angular/router";
     MatIconModule,
     RouterLink
   ],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.sass'
+  templateUrl: './products-management.component.html',
+  styleUrl: './products-management.component.sass'
 })
-export class ProductListComponent implements AfterViewInit {
+export class ProductsManagementComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'brand', 'actions'];
   products: Product[] = []
 

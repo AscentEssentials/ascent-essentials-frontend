@@ -6,14 +6,16 @@ import {CustomerAccountComponent} from "./customer-account/customer-account.comp
 import {CustomerLoginComponent} from "./customer-login/customer-login.component";
 import {SupplierLoginComponent} from "./supplier-login/supplier-login.component";
 import {ProductComponent} from "./product/product.component";
-import {ProductsComponent} from "./products/products.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {NotificationsComponent} from "./notifications/notifications.component";
-import {ProductListComponent} from "./product-list/product-list.component";
+import {ProductsManagementComponent} from "./products-management/products-management.component";
 import {ProductManagementComponent} from "./product-management/product-management.component";
 import {CategoryProductsComponent} from "./category-products/category-products.component";
 import {SubcategoryProductsComponent} from "./subcategory-products/subcategory-products.component";
 import {SearchProductsComponent} from "./search-products/search-products.component";
+import {SupplierAccountComponent} from "./supplier-account/supplier-account.component";
+import {CategoriesManagementComponent} from "./categories-management/categories-management.component";
+import {OrdersManagementComponent} from "./orders-management/orders-management.component";
 
 export const routes: Routes = [
   {
@@ -72,14 +74,29 @@ export const routes: Routes = [
     title: 'Notifications'
   },
   {
-    path: 'product-list',
-    component: ProductListComponent,
-    title: 'Product List'
+    path: 'products-management',
+    component: ProductsManagementComponent,
+    title: 'Products Management'
+  },
+  {
+    path: 'categories-management',
+    component: CategoriesManagementComponent,
+    title: 'Categories Management'
+  },
+  {
+    path: 'orders-management',
+    component: OrdersManagementComponent,
+    title: 'Orders Management'
   },
   {
     path: 'product-management',
     component: ProductManagementComponent,
     title: 'Product Management'
+  },
+  {
+    path: 'supplier-account',
+    component: SupplierAccountComponent,
+    title: 'Account'
   },
   {
     path: '',

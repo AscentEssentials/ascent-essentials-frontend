@@ -1,0 +1,36 @@
+<div class="categories-container">
+  <h1>Categories Management</h1>
+
+  <!-- Section to display existing categories -->
+  <div>
+    <h2>Existing Categories:</h2>
+    <ul>
+      <li *ngFor="let category of categories">
+        {{ category }}
+        <button mat-icon-button (click)="editCategory(category)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Section to add/edit categories -->
+  <div>
+    <h2>Add/Edit Category:</h2>
+    <form *ngIf="editingCategory" (ngSubmit)="submitEditForm()" #editForm="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Edit Category</mat-label>
+        <input matInput name="editedCategory" [(ngModel)]="editedCategory" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Save Changes</button>
+    </form>
+
+    <form *ngIf="!editingCategory" (ngSubmit)="submitAddForm()" #addForm="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>New Category</mat-label>
+        <input matInput name="newCategory" [(ngModel)]="newCategory" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Add Category</button>
+    </form>
+  </div>
+</div>
