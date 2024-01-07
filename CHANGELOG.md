@@ -1,3 +1,12 @@
+## [1.12.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.11.0...1.12.0) (2024-01-07)
+
+
+### Features
+
+* now it is possible to add new subcategory ([a88dd0f](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/a88dd0f4713297ed4a178bc0e291930b3acb2809))
+* now it is possible to edit subcategories ([5c02934](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5c029346159cf23d468fe0af327665e99964c7ff))
+* provide new routes in Category service ([7651050](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/765105072ec9b82bb947f8290416583588a0b1d0))
+
 ## [1.11.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.10.0...1.11.0) (2024-01-07)
 
 
