@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {MatSelectModule} from "@angular/material/select";
+import {Subcategory} from "../subcategory";
+import {CategoryService} from "../category.service";
+import {PermissionService} from "../permission.service";
 
 @Component({
   selector: 'app-categories-management',
@@ -16,42 +20,49 @@ import {MatIconModule} from "@angular/material/icon";
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
+  providers: [CategoryService, PermissionService],
   templateUrl: './categories-management.component.html',
   styleUrl: './categories-management.component.sass'
 })
-export class CategoriesManagementComponent {
-  categories: string[] = ['Category 1', 'Category 2', 'Category 3']; // Example categories
-  newCategory: string = '';
-  editingCategory: string = '';
-  editedCategory: string = '';
+export class CategoriesManagementComponent implements OnInit {
+  categoryForm: FormGroup;
+  existingSubcategories: Subcategory[] = []
 
-  editCategory(category: string) {
-    this.editingCategory = category;
-    this.editedCategory = category;
+  constructor(private fb: FormBuilder, private categoryService: CategoryService, private permissionService: PermissionService) {
+    this.categoryForm = this.fb.group({
+      categoryId: ['', Validators.required],
+      newName: ['', Validators.required],
+      newDescription: ['', Validators.required],
+    })
   }
 
-  submitEditForm() {
-    // Update the category logic here
-    const index = this.categories.indexOf(this.editingCategory);
-    if (index !== -1) {
-      this.categories[index] = this.editedCategory;
-      // You can send a request to your backend to update the category
-    }
-
-    this.editingCategory = '';
-    this.editedCategory = '';
+  ngOnInit(): void {
+    this.getSubcategories()
   }
 
-  submitAddForm() {
-    // Add the category logic here
-    if (this.newCategory.trim() !== '' && !this.categories.includes(this.newCategory)) {
-      this.categories.push(this.newCategory);
-      // You can send a request to your backend to add the category
+  getSubcategories() {
+    this.categoryService.getAllSubcategories().subscribe(subcategories => {
+      this.existingSubcategories = subcategories
+    })
+  }
 
-      // Clear the input field
-      this.newCategory = '';
+  submitForm() {
+    const newName: string = this.categoryForm.value.newName
+    const newDescription: string = this.categoryForm.value.newDescription
+    const selectedSubcategoryId: string = this.categoryForm.value.categoryId
+    const selectedSubcategory = this.existingSubcategories.find(subcategory => subcategory._id == selectedSubcategoryId)!!
+    const newSubcategory: Subcategory = {
+      _id: selectedSubcategory._id,
+      categoryId: selectedSubcategory?.categoryId,
+      name: newName,
+      description: newDescription
     }
+    this.categoryService.editSubcategory(newSubcategory, this.permissionService.getToken().token).subscribe(_ => {
+      this.getSubcategories()
+    })
   }
 }

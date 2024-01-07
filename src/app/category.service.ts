@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../environments/environment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Category} from "./category";
 import {Observable} from "rxjs";
 import {Subcategory} from "./subcategory";
@@ -29,11 +29,13 @@ export class CategoryService {
     return this.http.get<Subcategory>(`${this.apiUrl}/subcategory?id=${id}`);
   }
 
-  createSubcategory(category: Subcategory): Observable<Object> {
-    return this.http.post<Subcategory>(`${this.apiUrl}/subcategory`, category);
+  createSubcategory(category: Subcategory, token: string): Observable<Object> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    return this.http.post<Subcategory>(`${this.apiUrl}/subcategory`, category, {headers});
   }
 
-  editSubcategory(id: string, newSubcategory: Subcategory): Observable<Object> {
-    return this.http.put(`${this.apiUrl}/subcategory/${id}`, newSubcategory)
+  editSubcategory(newSubcategory: Subcategory, token: string): Observable<Object> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    return this.http.put(`${this.apiUrl}/subcategory/${newSubcategory._id}`, newSubcategory, {headers})
   }
 }
