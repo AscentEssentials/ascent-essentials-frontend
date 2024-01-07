@@ -49,7 +49,6 @@ export const routes: Routes = [
     path: 'login',
     component: UserLoginComponent,
     title: 'Log In',
-    canActivate: [!isUserLogged],
   },
   {
     path: 'products',
