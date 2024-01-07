@@ -1,6 +1,9 @@
 export interface Subcategory {
-  _id: string,
   categoryId: string
   name: string,
   description: string,
+}
+
+export interface SubcategoryResponse extends Subcategory {
+  _id: string
 }

@@ -3,7 +3,7 @@ import {environment} from "../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Category} from "./category";
 import {Observable} from "rxjs";
-import {Subcategory} from "./subcategory";
+import {Subcategory, SubcategoryResponse} from "./subcategory";
 
 @Injectable({
   providedIn: 'root'
@@ -21,20 +21,20 @@ export class CategoryService {
     return this.http.get<Category>(`${this.apiUrl}/category?id=${id}`);
   }
 
-  getAllSubcategories(): Observable<Subcategory[]> {
-    return this.http.get<Subcategory[]>(`${this.apiUrl}/subcategories`);
+  getAllSubcategories(): Observable<SubcategoryResponse[]> {
+    return this.http.get<SubcategoryResponse[]>(`${this.apiUrl}/subcategories`);
   }
 
-  getSubcategoryById(id: string): Observable<Subcategory> {
-    return this.http.get<Subcategory>(`${this.apiUrl}/subcategory?id=${id}`);
+  getSubcategoryById(id: string): Observable<SubcategoryResponse> {
+    return this.http.get<SubcategoryResponse>(`${this.apiUrl}/subcategory?id=${id}`);
   }
 
   createSubcategory(category: Subcategory, token: string): Observable<Object> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
-    return this.http.post<Subcategory>(`${this.apiUrl}/subcategory`, category, {headers});
+    return this.http.post(`${this.apiUrl}/subcategory`, category, {headers});
   }
 
-  editSubcategory(newSubcategory: Subcategory, token: string): Observable<Object> {
+  editSubcategory(newSubcategory: SubcategoryResponse, token: string): Observable<Object> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
     return this.http.put(`${this.apiUrl}/subcategory/${newSubcategory._id}`, newSubcategory, {headers})
   }
