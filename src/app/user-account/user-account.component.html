@@ -1,0 +1,31 @@
+<div class="account-data-container">
+  <h1>Your account</h1>
+
+  <button mat-button (click)="logout()">Logout</button>
+
+  <div class="account-info">
+    <div>
+      <strong>Name:</strong> {{ user?.name }}
+    </div>
+    <div>
+      <strong>Surname:</strong> {{ user?.surname }}
+    </div>
+    <div>
+      <strong>Email:</strong> {{ user?.email }}
+    </div>
+    <div>
+      <strong>Address:</strong> {{ user?.address }}
+    </div>
+    <div>
+      <strong>Address number:</strong> {{ user?.addressNumber }}
+    </div>
+    <div>
+      <strong>ZIP Code:</strong> {{ user?.zipCode }}
+    </div>
+    <div>
+      <strong>Telephone Number:</strong> {{ user?.telephoneNumber }}
+    </div>
+  </div>
+</div>
+<app-customer-account *ngIf="!user?.isAdmin"></app-customer-account>
+<app-supplier-account *ngIf="user?.isAdmin"></app-supplier-account>

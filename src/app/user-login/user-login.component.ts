@@ -5,9 +5,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {UserService} from "../user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
-import {Token, User} from "../user";
-import {CookieService} from "ngx-cookie-service";
+import {User} from "../user";
 import {Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-user-login',
@@ -51,8 +51,11 @@ export class UserLoginComponent {
       isAdmin: false,
     }
     this.userService.registerUser(user).subscribe(token => {
-      this.cookieService.set("accessToken", token.token)
-      this.manageAccess(token)
+      this.userService.getUserDetails(token.token).subscribe(user => {
+        this.cookieService.set("accessToken", token.token)
+        this.cookieService.set("isAdmin", `${user.isAdmin}`)
+        this.router.navigate(["/user/account"])
+      })
     })
   }
 
@@ -61,18 +64,11 @@ export class UserLoginComponent {
       email: this.loginUserName.value,
       password: this.loginUserPassword.value,
     }).subscribe(token => {
-      this.cookieService.set("accessToken", token.token)
-      this.manageAccess(token)
-    })
-  }
-
-  manageAccess(token: Token) {
-    this.userService.getUserDetails(token.token).subscribe(user => {
-      if(user.isAdmin){
-        this.router.navigate(["/supplier-account"])
-      } else {
-        this.router.navigate(["/customer-account"])
-      }
+      this.userService.getUserDetails(token.token).subscribe(user => {
+        this.cookieService.set("accessToken", token.token)
+        this.cookieService.set("isAdmin", `${user.isAdmin}`)
+        this.router.navigate(["/user/account"])
+      })
     })
   }
 }

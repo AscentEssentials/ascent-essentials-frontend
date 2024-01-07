@@ -13,15 +13,15 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   registerUser(user: User): Observable<Token> {
-    return this.http.post<Token>(`${this.apiUrl}/register`, user);
+    return this.http.post<Token>(`${this.apiUrl}/register`, user)
   }
 
   loginUser(credentials: { email: string, password: string }): Observable<Token> {
-    return this.http.post<Token>(`${this.apiUrl}/login`, credentials);
+    return this.http.post<Token>(`${this.apiUrl}/login`, credentials)
   }
 
-  getUserDetails(accessToken: string): Observable<User> {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`)
+  getUserDetails(token: string): Observable<User> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
     return this.http.get<User>(`${this.apiUrl}/user`, {headers})
   }
 }
