@@ -11,19 +11,19 @@ import {ProductManagementComponent} from "./product-management/product-managemen
 import {CategoryProductsComponent} from "./category-products/category-products.component";
 import {SubcategoryProductsComponent} from "./subcategory-products/subcategory-products.component";
 import {SearchProductsComponent} from "./search-products/search-products.component";
-import {SupplierAccountComponent} from "./supplier-account/supplier-account.component";
 import {CategoriesManagementComponent} from "./categories-management/categories-management.component";
 import {OrdersManagementComponent} from "./orders-management/orders-management.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
-import {isUserCustomer, isUserLogged, isUserSupplier} from "./user-permission.guard";
-import {CustomerAccountComponent} from "./customer-account/customer-account.component";
 
 export const routes: Routes = [
   {
-    path: 'customer',
-    component: CustomerAccountComponent,
-    title: 'Account',
+    path: 'user',
     children: [
+      {
+        path: 'account',
+        component: UserAccountComponent,
+        title: 'Account',
+      },
       {
         path: 'cart',
         component: CartComponent,
@@ -35,11 +35,6 @@ export const routes: Routes = [
         title: 'Checkout',
       },
       {
-        path: 'login',
-        component: UserLoginComponent,
-        title: 'Log In'
-      },
-      {
         path: 'notifications',
         component: NotificationsComponent,
         title: 'Notifications',
@@ -47,21 +42,9 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'supplier',
-    component: CustomerAccountComponent,
-    title: 'Account',
-    children: [
-      {
-        path: 'login',
-        component: UserLoginComponent,
-        title: 'Log In'
-      },
-      {
-        path: 'notifications',
-        component: NotificationsComponent,
-        title: 'Notifications',
-      },
-    ]
+    path: 'login',
+    component: UserLoginComponent,
+    title: 'Log In'
   },
   {
     path: 'products',
