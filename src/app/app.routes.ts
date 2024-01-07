@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {CartComponent} from "./cart/cart.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
-import {CustomerAccountComponent} from "./customer-account/customer-account.component";
 import {UserLoginComponent} from "./user-login/user-login.component";
 import {ProductComponent} from "./product/product.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
@@ -15,6 +14,8 @@ import {SearchProductsComponent} from "./search-products/search-products.compone
 import {SupplierAccountComponent} from "./supplier-account/supplier-account.component";
 import {CategoriesManagementComponent} from "./categories-management/categories-management.component";
 import {OrdersManagementComponent} from "./orders-management/orders-management.component";
+import {UserAccountComponent} from "./user-account/user-account.component";
+import {isUserCustomer, isUserLogged, isUserSupplier} from "./user-permission.guard";
 
 export const routes: Routes = [
   {
@@ -25,20 +26,20 @@ export const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
-    title: 'Cart'
+    title: 'Cart',
   },
   {
     path: 'checkout',
     component: CheckoutComponent,
-    title: 'Checkout'
+    title: 'Checkout',
   },
   {
-    path: 'customer-account',
-    component: CustomerAccountComponent,
-    title: 'Account'
+    path: 'account',
+    component: UserAccountComponent,
+    title: 'Account',
   },
   {
-    path: 'user-login',
+    path: 'login',
     component: UserLoginComponent,
     title: 'Log In'
   },
@@ -65,32 +66,27 @@ export const routes: Routes = [
   {
     path: 'notifications',
     component: NotificationsComponent,
-    title: 'Notifications'
+    title: 'Notifications',
   },
   {
     path: 'products-management',
     component: ProductsManagementComponent,
-    title: 'Products Management'
+    title: 'Products Management',
   },
   {
     path: 'categories-management',
     component: CategoriesManagementComponent,
-    title: 'Categories Management'
+    title: 'Categories Management',
   },
   {
     path: 'orders-management',
     component: OrdersManagementComponent,
-    title: 'Orders Management'
+    title: 'Orders Management',
   },
   {
     path: 'product-management',
     component: ProductManagementComponent,
-    title: 'Product Management'
-  },
-  {
-    path: 'supplier-account',
-    component: SupplierAccountComponent,
-    title: 'Account'
+    title: 'Product Management',
   },
   {
     path: '',
