@@ -16,77 +16,114 @@ import {CategoriesManagementComponent} from "./categories-management/categories-
 import {OrdersManagementComponent} from "./orders-management/orders-management.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
 import {isUserCustomer, isUserLogged, isUserSupplier} from "./user-permission.guard";
+import {CustomerAccountComponent} from "./customer-account/customer-account.component";
 
 export const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
-    title: 'Home Page'
-  },
-  {
-    path: 'cart',
-    component: CartComponent,
-    title: 'Cart',
-  },
-  {
-    path: 'checkout',
-    component: CheckoutComponent,
-    title: 'Checkout',
-  },
-  {
-    path: 'account',
-    component: UserAccountComponent,
+    path: 'customer',
+    component: CustomerAccountComponent,
     title: 'Account',
+    children: [
+      {
+        path: 'cart',
+        component: CartComponent,
+        title: 'Cart',
+      },
+      {
+        path: 'checkout',
+        component: CheckoutComponent,
+        title: 'Checkout',
+      },
+      {
+        path: 'login',
+        component: UserLoginComponent,
+        title: 'Log In'
+      },
+      {
+        path: 'notifications',
+        component: NotificationsComponent,
+        title: 'Notifications',
+      },
+    ]
   },
   {
-    path: 'login',
-    component: UserLoginComponent,
-    title: 'Log In'
+    path: 'supplier',
+    component: CustomerAccountComponent,
+    title: 'Account',
+    children: [
+      {
+        path: 'login',
+        component: UserLoginComponent,
+        title: 'Log In'
+      },
+      {
+        path: 'notifications',
+        component: NotificationsComponent,
+        title: 'Notifications',
+      },
+    ]
+  },
+  {
+    path: 'products',
+    children: [
+      {
+        path: 'category/:categoryId',
+        component: CategoryProductsComponent,
+        title: 'Products'
+      },
+      {
+        path: 'subcategory/:subcategoryId',
+        component: SubcategoryProductsComponent,
+        title: 'Products'
+      },
+      {
+        path: 'search/:query',
+        component: SearchProductsComponent,
+        title: 'Products'
+      },
+      {
+        path: 'management',
+        component: ProductsManagementComponent,
+        title: 'Products Management',
+      },
+    ]
   },
   {
     path: 'product/:productId',
     component: ProductComponent,
-    title: 'Product'
+    title: 'Product',
+    children: [
+      {
+        path: 'management',
+        component: ProductManagementComponent,
+        title: 'Product Management',
+      },
+    ]
   },
   {
-    path: 'products/category/:categoryId',
-    component: CategoryProductsComponent,
-    title: 'Products'
+    path: 'categories',
+    children: [
+      {
+        path: 'management',
+        component: CategoriesManagementComponent,
+        title: 'Categories Management',
+      },
+    ]
   },
   {
-    path: 'products/subcategory/:subcategoryId',
-    component: SubcategoryProductsComponent,
-    title: 'Products'
+    path: 'orders',
+    children: [
+      {
+        path: 'management',
+        component: OrdersManagementComponent,
+        title: 'Orders Management',
+      },
+    ]
   },
   {
-    path: 'products/search/:query',
-    component: SearchProductsComponent,
-    title: 'Products'
-  },
-  {
-    path: 'notifications',
-    component: NotificationsComponent,
-    title: 'Notifications',
-  },
-  {
-    path: 'products-management',
-    component: ProductsManagementComponent,
-    title: 'Products Management',
-  },
-  {
-    path: 'categories-management',
-    component: CategoriesManagementComponent,
-    title: 'Categories Management',
-  },
-  {
-    path: 'orders-management',
-    component: OrdersManagementComponent,
-    title: 'Orders Management',
-  },
-  {
-    path: 'product-management',
-    component: ProductManagementComponent,
-    title: 'Product Management',
+    path: 'home',
+    component: HomeComponent,
+    title: 'Home Page'
   },
   {
     path: '',
