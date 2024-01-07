@@ -7,9 +7,9 @@ import {User} from "../user";
 import {UserService} from "../user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {CookieService} from "ngx-cookie-service";
 import {CustomerAccountComponent} from "../customer-account/customer-account.component";
 import {SupplierAccountComponent} from "../supplier-account/supplier-account.component";
+import {PermissionService} from "../permission.service";
 
 @Component({
   selector: 'app-user-account',
@@ -25,24 +25,23 @@ import {SupplierAccountComponent} from "../supplier-account/supplier-account.com
     SupplierAccountComponent,
     NgIf,
   ],
-  providers: [UserService],
+  providers: [UserService, PermissionService],
   templateUrl: './user-account.component.html',
   styleUrl: './user-account.component.sass'
 })
 export class UserAccountComponent implements OnInit {
   user?: User
 
-  constructor(private router: Router, private userService: UserService, private cookieService: CookieService) {}
+  constructor(private router: Router, private userService: UserService, private permissionService: PermissionService) {}
 
   ngOnInit(): void {
-    this.userService.getUserDetails(this.cookieService.get("accessToken")).subscribe(user => {
+    this.userService.getUserDetails(this.permissionService.getToken().token).subscribe(user => {
       this.user = user
     })
   }
 
   logout() {
-    this.cookieService.delete("accessToken")
-    this.cookieService.delete("isAdmin")
+    this.permissionService.deletePermission()
     this.router.navigate(["/home"])
   }
 }

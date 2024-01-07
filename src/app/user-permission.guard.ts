@@ -1,15 +1,15 @@
 import { CanActivateFn } from '@angular/router';
-import {UserService} from "./user.service";
-import {Inject} from "@angular/core";
+import {inject} from "@angular/core";
+import {PermissionService} from "./permission.service";
 
 export const isUserLogged: CanActivateFn = (route, state) => {
-  return Inject(UserService).isUserLogged()
+  return inject(PermissionService).isUserLogged()
 }
 
 export const isUserSupplier: CanActivateFn = (route, state) => {
-  return Inject(UserService).isUserSupplier()
+  return inject(PermissionService).isUserSupplier()
 }
 
 export const isUserCustomer: CanActivateFn = (route, state) => {
-  return !Inject(UserService).isUserSupplier()
+  return inject(PermissionService).isUserCustomer()
 }
