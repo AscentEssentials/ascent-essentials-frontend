@@ -1,3 +1,23 @@
+## [1.11.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.10.0...1.11.0) (2024-01-07)
+
+
+### Features
+
+* add permission service and guard ([baca880](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/baca880f6ae148f5d3d9303ce924cb3252f2d780))
+* implement redirect in guard ([94617f7](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/94617f76f525239b3a96ff1744ae11f169b2e0b8))
+
+
+### Dependency updates
+
+* **deps:** update angular-cli monorepo to v17.0.9 ([42cde98](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/42cde98ec88fc5e8e7b358c87756ebfcfe70fccb))
+
+
+### Refactoring
+
+* improve routes ([3da336f](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/3da336f670947914868b0564a35fd807e2fff90f))
+* improve routes ([d0cc212](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/d0cc212ab4f1bb855884d452cdaa956210bff32e))
+* split accounts ([9a9ec83](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9a9ec83ea0c45c16da7db4c50ca9e070a7103efc))
+
 ## [1.10.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.9.0...1.10.0) (2024-01-06)
 
 
