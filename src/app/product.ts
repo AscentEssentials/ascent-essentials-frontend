@@ -1,5 +1,4 @@
 export interface Product {
-  _id: string
   name: string
   brand: string
   price: number
@@ -8,4 +7,8 @@ export interface Product {
   technicalSpecifications: Record<string, string>
   quantity: number
   images: string[]
+}
+
+export interface ProductResponse extends Product{
+  _id: string
 }

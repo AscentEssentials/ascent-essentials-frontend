@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 
@@ -14,5 +14,5 @@ import {MatButtonModule} from "@angular/material/button";
   styleUrl: './product-card.component.sass'
 })
 export class ProductCardComponent {
-  @Input() product: Product | undefined;
+  @Input() product: ProductResponse | undefined;
 }

@@ -3,7 +3,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {CurrencyPipe, NgClass, NgForOf, NgOptimizedImage} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {HttpClientModule} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {ProductService} from "../product.service";
@@ -25,7 +25,7 @@ import {ProductService} from "../product.service";
   styleUrl: './product.component.sass'
 })
 export class ProductComponent implements OnInit {
-  product!: Product
+  product!: ProductResponse
   productId!: string
 
   currentImage: string = "../../assets/images/placeholder.jpg"

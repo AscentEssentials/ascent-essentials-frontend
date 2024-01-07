@@ -80,14 +80,12 @@ export const routes: Routes = [
     path: 'product/:productId',
     component: ProductComponent,
     title: 'Product',
-    children: [
-      {
-        path: 'management',
-        component: ProductManagementComponent,
-        title: 'Product Management',
-        canActivate: [isUserSupplier],
-      },
-    ]
+  },
+  {
+    path: 'product/new',
+    component: ProductManagementComponent,
+    title: 'Product Management',
+    canActivate: [isUserSupplier],
   },
   {
     path: 'categories',

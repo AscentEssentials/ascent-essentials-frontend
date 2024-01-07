@@ -3,7 +3,7 @@ import {ProductsComponent} from "../products/products.component";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductService} from "../product.service";
 import {ActivatedRoute} from "@angular/router";
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 
 @Component({
   selector: 'app-search-products',
@@ -18,7 +18,7 @@ import {Product} from "../product";
 })
 export class SearchProductsComponent implements OnInit {
   query: string = ""
-  products: Product[] = []
+  products: ProductResponse[] = []
 
   constructor(private route: ActivatedRoute, private productService: ProductService) {}
 

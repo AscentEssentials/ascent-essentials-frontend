@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductService} from "../product.service";
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {ProductsComponent} from "../products/products.component";
 
 @Component({
@@ -18,7 +18,7 @@ import {ProductsComponent} from "../products/products.component";
 })
 export class SubcategoryProductsComponent implements OnInit {
   subcategoryId: string = ""
-  products: Product[] = []
+  products: ProductResponse[] = []
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
