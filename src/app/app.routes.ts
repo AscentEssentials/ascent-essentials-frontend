@@ -14,10 +14,12 @@ import {SearchProductsComponent} from "./search-products/search-products.compone
 import {CategoriesManagementComponent} from "./categories-management/categories-management.component";
 import {OrdersManagementComponent} from "./orders-management/orders-management.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
+import {isUserCustomer, isUserLogged, isUserSupplier} from "./user-permission.guard";
 
 export const routes: Routes = [
   {
     path: 'user',
+    canActivate: [isUserLogged],
     children: [
       {
         path: 'account',
@@ -28,11 +30,13 @@ export const routes: Routes = [
         path: 'cart',
         component: CartComponent,
         title: 'Cart',
+        canActivate: [isUserCustomer],
       },
       {
         path: 'checkout',
         component: CheckoutComponent,
         title: 'Checkout',
+        canActivate: [isUserCustomer],
       },
       {
         path: 'notifications',
@@ -44,7 +48,8 @@ export const routes: Routes = [
   {
     path: 'login',
     component: UserLoginComponent,
-    title: 'Log In'
+    title: 'Log In',
+    canActivate: [!isUserLogged],
   },
   {
     path: 'products',
@@ -68,6 +73,7 @@ export const routes: Routes = [
         path: 'management',
         component: ProductsManagementComponent,
         title: 'Products Management',
+        canActivate: [isUserSupplier],
       },
     ]
   },
@@ -80,6 +86,7 @@ export const routes: Routes = [
         path: 'management',
         component: ProductManagementComponent,
         title: 'Product Management',
+        canActivate: [isUserSupplier],
       },
     ]
   },
@@ -90,6 +97,7 @@ export const routes: Routes = [
         path: 'management',
         component: CategoriesManagementComponent,
         title: 'Categories Management',
+        canActivate: [isUserSupplier],
       },
     ]
   },
@@ -100,6 +108,7 @@ export const routes: Routes = [
         path: 'management',
         component: OrdersManagementComponent,
         title: 'Orders Management',
+        canActivate: [isUserSupplier],
       },
     ]
   },

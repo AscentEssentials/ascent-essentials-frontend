@@ -7,7 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
 import {User} from "../user";
 import {Router} from "@angular/router";
-import {CookieService} from "ngx-cookie-service";
+import {PermissionService} from "../permission.service";
 
 @Component({
   selector: 'app-user-login',
@@ -19,7 +19,7 @@ import {CookieService} from "ngx-cookie-service";
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [UserService],
+  providers: [UserService, PermissionService],
   templateUrl: './user-login.component.html',
   styleUrl: './user-login.component.sass'
 })
@@ -36,7 +36,7 @@ export class UserLoginComponent {
   registerUserZipCode: FormControl = new FormControl('')
   registerUserTelephoneNumber: FormControl = new FormControl('')
 
-  constructor(private router: Router, private userService: UserService, private cookieService: CookieService) { }
+  constructor(private router: Router, private userService: UserService, private permissionService: PermissionService) { }
 
   registerUser() {
     let user: User = {
@@ -52,8 +52,7 @@ export class UserLoginComponent {
     }
     this.userService.registerUser(user).subscribe(token => {
       this.userService.getUserDetails(token.token).subscribe(user => {
-        this.cookieService.set("accessToken", token.token)
-        this.cookieService.set("isAdmin", `${user.isAdmin}`)
+        this.permissionService.registerPermission(token, user.isAdmin)
         this.router.navigate(["/user/account"])
       })
     })
@@ -65,8 +64,7 @@ export class UserLoginComponent {
       password: this.loginUserPassword.value,
     }).subscribe(token => {
       this.userService.getUserDetails(token.token).subscribe(user => {
-        this.cookieService.set("accessToken", token.token)
-        this.cookieService.set("isAdmin", `${user.isAdmin}`)
+        this.permissionService.registerPermission(token, user.isAdmin)
         this.router.navigate(["/user/account"])
       })
     })
