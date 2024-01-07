@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 import {ProductsComponent} from "../products/products.component";
 import {ProductService} from "../product.service";
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -18,7 +18,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class CategoryProductsComponent implements OnInit {
   categoryId: string = ""
-  products: Product[] = []
+  products: ProductResponse[] = []
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 

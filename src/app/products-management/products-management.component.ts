@@ -3,13 +3,15 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableDataSource, MatTableModule} from "@angular/material/table";
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 import {FormsModule} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {RouterLink} from "@angular/router";
+import {ProductService} from "../product.service";
+import {PermissionService} from "../permission.service";
 
 @Component({
   selector: 'app-products-management',
@@ -24,27 +26,23 @@ import {RouterLink} from "@angular/router";
     MatIconModule,
     RouterLink
   ],
+  providers: [ProductService, PermissionService],
   templateUrl: './products-management.component.html',
   styleUrl: './products-management.component.sass'
 })
 export class ProductsManagementComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'brand', 'actions'];
-  products: Product[] = []
-
+  products: ProductResponse[] = []
   searchTerm: string = '';
-  filteredProducts: MatTableDataSource<Product> = new MatTableDataSource(this.products);
+  filteredProducts: MatTableDataSource<ProductResponse> = new MatTableDataSource(this.products);
 
-  constructor(public dialog: MatDialog, private snackBar: MatSnackBar) {}
+  constructor(public dialog: MatDialog, private snackBar: MatSnackBar, private productService: ProductService, private permissionService: PermissionService) {}
 
-  deleteProduct(product: Product): void {
-    const index = this.products.indexOf(product);
-    if (index !== -1) {
-      this.products.splice(index, 1);
-      this.filteredProducts.data = [...this.products];
+  deleteProduct(product: ProductResponse): void {
+    this.productService.deleteProductById(product._id, this.permissionService.getToken()).subscribe(_ => {
       this.snackBar.open('Product deleted successfully', 'OK', { duration: 2000 });
-    } else {
-      this.snackBar.open('Error deleting product', 'OK', { duration: 2000 });
-    }
+      this.search()
+    })
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -54,10 +52,13 @@ export class ProductsManagementComponent implements AfterViewInit {
   }
 
   search(): void {
-    this.filteredProducts.data = this.products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-        product.brand.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+    this.productService.getProductsByQuery(this.searchTerm).subscribe(products => {
+      this.products = products
+      this.filteredProducts.data = this.products.filter(
+        (product) =>
+          product.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          product.brand.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    })
   }
 }

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {ProductCardComponent} from "../product-card/product-card.component";
 import {NgForOf} from "@angular/common";
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -28,9 +28,9 @@ import {RouterLink} from "@angular/router";
   styleUrl: './products.component.sass'
 })
 export class ProductsComponent{
-  @Input() products: Product[] = []
+  @Input() products: ProductResponse[] = []
 
-  filteredProducts: Product[]
+  filteredProducts: ProductResponse[]
   priceFilterForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {

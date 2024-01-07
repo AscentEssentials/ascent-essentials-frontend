@@ -4,7 +4,7 @@ import {CurrencyPipe, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
-import {Product} from "../product";
+import {ProductResponse} from "../product";
 import {MatPaginatorModule} from "@angular/material/paginator";
 
 @Component({
@@ -23,7 +23,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
   styleUrl: './cart.component.sass'
 })
 export class CartComponent implements OnInit {
-  cartItems: Product[] = [];
+  cartItems: ProductResponse[] = [];
 
   total: number = 0;
   pageSizeOptions: number[] = [5, 10, 25, 50];
@@ -36,7 +36,7 @@ export class CartComponent implements OnInit {
     this.total = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
-  removeFromCart(item: Product) {
+  removeFromCart(item: ProductResponse) {
     const index = this.cartItems.indexOf(item);
     if (index !== -1) {
       this.cartItems.splice(index, 1);

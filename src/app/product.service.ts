@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../environments/environment";
 import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {Product} from "./product";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Product, ProductResponse} from "./product";
+import {Token} from "./user";
 
 @Injectable({
   providedIn: 'root'
@@ -12,39 +13,37 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/products`);
+  getAllProducts(): Observable<ProductResponse[]> {
+    return this.http.get<ProductResponse[]>(`${this.apiUrl}/products`);
   }
 
-  getProductsByCategory(subcategoryId: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/products/category/${subcategoryId}`);
+  getProductsByCategory(subcategoryId: string): Observable<ProductResponse[]> {
+    return this.http.get<ProductResponse[]>(`${this.apiUrl}/products/category/${subcategoryId}`);
   }
 
-  getProductsBySubcategory(categoryId: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/products/subcategory/${categoryId}`);
+  getProductsBySubcategory(categoryId: string): Observable<ProductResponse[]> {
+    return this.http.get<ProductResponse[]>(`${this.apiUrl}/products/subcategory/${categoryId}`);
   }
 
-  getProductsByQuery(query: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/products/search?query=${query}`);
+  getProductsByQuery(query: string): Observable<ProductResponse[]> {
+    return this.http.get<ProductResponse[]>(`${this.apiUrl}/products/search?query=${query}`);
   }
 
-  getProductById(productId: string): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}/product/${productId}`);
+  getProductById(productId: string): Observable<ProductResponse> {
+    return this.http.get<ProductResponse>(`${this.apiUrl}/product/${productId}`);
   }
 
   getProductImage(imageName: string): Observable<string> {
     return this.http.get<string>(`${this.apiUrl}/product/image/${imageName}`)
   }
 
-  createProduct(productData: Product): Observable<Product> {
-    return this.http.post<Product>(`${this.apiUrl}/product`, productData);
+  createProduct(product: Product, token: Token): Observable<Object> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token.token}`)
+    return this.http.post(`${this.apiUrl}/product`, product, {headers});
   }
 
-  updateProduct(productId: string, productData: Product): Observable<Product> {
-    return this.http.put<Product>(`${this.apiUrl}/product/${productId}`, productData);
-  }
-
-  deleteProductById(productId: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/product/${productId}`);
+  deleteProductById(productId: string, token: Token): Observable<Object> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token.token}`)
+    return this.http.delete(`${this.apiUrl}/product/${productId}`, {headers});
   }
 }
