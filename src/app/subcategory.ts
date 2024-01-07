@@ -1,9 +1,6 @@
-import {ObjectId} from "mongodb";
-import {Category} from "./category";
-
 export interface Subcategory {
-  id: ObjectId,
+  _id: string,
+  categoryId: string
   name: string,
   description: string,
-  parentCategory: Category,
 }
