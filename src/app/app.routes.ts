@@ -7,7 +7,7 @@ import {ProductComponent} from "./product/product.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {NotificationsComponent} from "./notifications/notifications.component";
 import {ProductsManagementComponent} from "./products-management/products-management.component";
-import {ProductManagementComponent} from "./product-management/product-management.component";
+import {NewProductComponent} from "./new-product/new-product.component";
 import {CategoryProductsComponent} from "./category-products/category-products.component";
 import {SubcategoryProductsComponent} from "./subcategory-products/subcategory-products.component";
 import {SearchProductsComponent} from "./search-products/search-products.component";
@@ -77,15 +77,20 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'product/:productId',
-    component: ProductComponent,
-    title: 'Product',
-  },
-  {
-    path: 'product/new',
-    component: ProductManagementComponent,
-    title: 'Product Management',
-    canActivate: [isUserSupplier],
+    path: 'product',
+    children: [
+      {
+        path: 'new',
+        component: NewProductComponent,
+        title: 'New Product',
+        canActivate: [isUserSupplier],
+      },
+      {
+        path: ':productId',
+        component: ProductComponent,
+        title: 'Product',
+      },
+    ]
   },
   {
     path: 'categories',

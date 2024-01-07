@@ -6,9 +6,9 @@ export interface Product {
   description: string
   technicalSpecifications: Record<string, string>
   quantity: number
-  images: string[]
 }
 
 export interface ProductResponse extends Product{
   _id: string
+  images: string[]
 }

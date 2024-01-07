@@ -1,0 +1,40 @@
+<form [formGroup]="newProductForm" (ngSubmit)="submitForm()">
+  <mat-form-field appearance="outline">
+    <mat-label>Product Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Brand</mat-label>
+    <input matInput formControlName="brand" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price" type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Choose Subcategory</mat-label>
+    <mat-select formControlName="subCategoryId">
+      <mat-option *ngFor="let category of subcategories" [value]="category._id">
+        {{ category.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input matInput formControlName="quantity" type="number" />
+  </mat-form-field>
+
+  <mat-label>Select Images</mat-label>
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
+
+  <button mat-raised-button type="submit" [disabled]="newProductForm.invalid">Add Product</button>
+</form>
