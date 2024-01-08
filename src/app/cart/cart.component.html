@@ -51,6 +51,6 @@
 
     <div class="total-price">Total Price: {{ cart.cartTotal | currency }}</div>
 
-    <button mat-raised-button (click)="checkout()" class="checkout-button">CHECKOUT</button>
+    <button mat-raised-button routerLink="/user/checkout" class="checkout-button">CHECKOUT</button>
   </div>
 </div>
