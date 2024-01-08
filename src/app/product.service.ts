@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../environments/environment";
-import {Observable} from "rxjs";
+import {forkJoin, Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ProductResponse} from "./product";
 import {Token} from "./user";
@@ -31,6 +31,15 @@ export class ProductService {
 
   getProductById(productId: string): Observable<ProductResponse> {
     return this.http.get<ProductResponse>(`${this.apiUrl}/product/${productId}`);
+  }
+
+  getProductsById(productId: string[]): Observable<ProductResponse[]> {
+    const observables: Observable<ProductResponse>[] = []
+    productId.forEach((element) => {
+      const observable = this.http.get<ProductResponse>(`${this.apiUrl}/product/${element}`)
+      observables.push(observable)
+    })
+    return forkJoin(observables)
   }
 
   getProductImage(imageName: string): Observable<string> {

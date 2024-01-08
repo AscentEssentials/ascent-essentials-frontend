@@ -7,6 +7,8 @@ import {ProductResponse} from "../product";
 import {HttpClientModule} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {ProductService} from "../product.service";
+import {CartService} from "../cart.service";
+import {PermissionService} from "../permission.service";
 
 @Component({
   selector: 'app-product',
@@ -20,22 +22,28 @@ import {ProductService} from "../product.service";
     HttpClientModule,
     NgOptimizedImage
   ],
-  providers: [ProductService],
+  providers: [ProductService, CartService, PermissionService],
   templateUrl: './product.component.html',
   styleUrl: './product.component.sass'
 })
 export class ProductComponent implements OnInit {
-  product!: ProductResponse
-  productId!: string
+  product?: ProductResponse
+  productId?: string
 
   currentImage: string = "../../assets/images/placeholder.jpg"
 
-  constructor(private snackBar: MatSnackBar, private route: ActivatedRoute, private productService: ProductService) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private route: ActivatedRoute,
+    private productService: ProductService,
+    private cartService: CartService,
+    private permissionService: PermissionService,
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
         this.productId = params['productId']
-        this.productService.getProductById(this.productId).subscribe(product => {
+        this.productService.getProductById(this.productId!).subscribe(product => {
           this.product = product
           this.currentImage = "http://localhost:3000/product/image/" + product.images[0]
           }
@@ -49,12 +57,13 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    const message = `${this.product.quantity} ${this.product.brand} ${this.product.name}(s) added to the cart.`;
-
-    this.snackBar.open(message, 'Close', {
-      duration: 5000,
-      verticalPosition: 'bottom',
-      panelClass: ['custom-snackbar']
-    });
+    this.cartService.addToCart(this.productId!, this.permissionService.getToken().token).subscribe(_ => {
+      const message = `${this.product!.brand} ${this.product!.name}(s) added to the cart.`;
+      this.snackBar.open(message, 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar']
+      });
+    })
   }
 }

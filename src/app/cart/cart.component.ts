@@ -1,11 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
-import {CurrencyPipe, NgIf} from "@angular/common";
+import {CurrencyPipe, NgForOf, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {ProductResponse} from "../product";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {CartService} from "../cart.service";
+import {PermissionService} from "../permission.service";
+import {Cart} from "../cart";
+import {ProductService} from "../product.service";
 
 @Component({
   selector: 'app-cart',
@@ -17,35 +21,62 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatButtonModule,
     MatIconModule,
     NgIf,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgForOf
   ],
+  providers: [CartService, PermissionService, ProductService],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.sass'
 })
 export class CartComponent implements OnInit {
-  cartItems: ProductResponse[] = [];
-
-  total: number = 0;
+  cartProducts: ProductResponse[] = [];
+  cart!: Cart
   pageSizeOptions: number[] = [5, 10, 25, 50];
 
-  ngOnInit() {
-    this.updateCartTotal();
-  }
+  constructor(
+    private cartService: CartService,
+    private permissionService: PermissionService,
+    private productService: ProductService,
+  ) {}
 
-  updateCartTotal() {
-    this.total = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  ngOnInit() {
+    this.updateCart()
   }
 
   removeFromCart(item: ProductResponse) {
-    const index = this.cartItems.indexOf(item);
-    if (index !== -1) {
-      this.cartItems.splice(index, 1);
-      this.updateCartTotal();
-    }
+    this.cartService
+      .removeProduct(item._id, this.permissionService.getToken().token)
+      .subscribe(_ => {
+        this.cartProducts = []
+        this.updateCart()
+      })
+  }
+
+  updateCart() {
+    this.cartService.getCart(this.permissionService.getToken().token).subscribe( cart => {
+      this.cart = cart
+      this.productService
+        .getProductsById(this.cart!.items.map(it => it.productId))
+        .subscribe(products => {
+          products.forEach(product => {
+            this.cartProducts.push(
+              {
+                name: product.name,
+                brand: product.brand,
+                price: product.price,
+                subCategoryId: product.subCategoryId,
+                description: product.description,
+                technicalSpecifications: product.technicalSpecifications,
+                quantity: this.cart.items.find(item => item.productId == product._id)!.quantity,
+                images: product.images,
+                _id: product._id
+              })
+          })
+        })
+    })
   }
 
   checkout() {
-    // Implement your checkout logic here
-    console.log('Checkout clicked! Implement your checkout logic.');
+    console.log('Checkout clicked! Implement checkout logic.');
   }
 }
