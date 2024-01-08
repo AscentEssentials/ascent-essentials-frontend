@@ -10,6 +10,7 @@ import {CartService} from "../cart.service";
 import {PermissionService} from "../permission.service";
 import {Cart} from "../cart";
 import {ProductService} from "../product.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -22,7 +23,8 @@ import {ProductService} from "../product.service";
     MatIconModule,
     NgIf,
     MatPaginatorModule,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   providers: [CartService, PermissionService, ProductService],
   templateUrl: './cart.component.html',
@@ -74,9 +76,5 @@ export class CartComponent implements OnInit {
           })
         })
     })
-  }
-
-  checkout() {
-    console.log('Checkout clicked! Implement checkout logic.');
   }
 }
