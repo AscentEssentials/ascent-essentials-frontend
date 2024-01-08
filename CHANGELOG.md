@@ -1,3 +1,16 @@
+## [1.13.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.12.0...1.13.0) (2024-01-08)
+
+
+### Features
+
+* now it is possible to add a product ([0ed9a40](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/0ed9a40a48285f221f97b6ccd602cb03145fa739))
+* now it is possible to delete a product ([889d784](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/889d78434c44f63f154db9761d8a7b32e3e234b7))
+
+
+### Refactoring
+
+* remove unused module ([242b46d](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/242b46d2d229c4ca3090a50cdc5814d81312b2c7))
+
 ## [1.12.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.11.0...1.12.0) (2024-01-07)
 
 
