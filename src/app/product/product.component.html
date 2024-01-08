@@ -1,17 +1,17 @@
 <div class="product-details">
-  <h1 class="product-name">{{ product.brand }} {{ product.name }}</h1>
+  <h1 class="product-name">{{ product?.brand }} {{ product?.name }}</h1>
 
   <div class="image-container">
-    <img class="product-image" [src]="currentImage" alt="{{product.name}}">
+    <img class="product-image" [src]="currentImage" alt="{{product?.name}}">
     <div class="thumbnail-container">
-      <img *ngFor="let image of product.images" class="thumbnail" src="http://localhost:3000/product/image/{{image}}" alt="{{product.name}}" (click)="changeImage(image)">
+      <img *ngFor="let image of product?.images" class="thumbnail" src="http://localhost:3000/product/image/{{image}}" alt="{{product?.name}}" (click)="changeImage(image)">
     </div>
   </div>
 
-  <p class="product-description">{{ product.description }}</p>
+  <p class="product-description">{{ product?.description }}</p>
 
   <div class="product-info">
-    <p class="price">Price: {{ product.price | currency }}</p>
+    <p class="price">Price: {{ product?.price | currency }}</p>
     <p class="availability" [ngClass]="{'not-available': false}">{{ 'Available' }}</p>
 
     <div class="quantity-container">

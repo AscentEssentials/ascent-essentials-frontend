@@ -29,20 +29,20 @@ export class CustomerAccountComponent implements OnInit {
   customer?: User
 
   orders = [
-    { orderNumber: '12345', date: new Date(), totalPrice: 39.98 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 55 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
-    { orderNumber: '54321', date: new Date(), totalPrice: 59.99 },
+    { orderNumber: '12345', date: new Date(), totalPrice: 39.98, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 55, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
+    { orderNumber: '54321', date: new Date(), totalPrice: 59.99, state: "Shipped" },
   ];
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 50];
