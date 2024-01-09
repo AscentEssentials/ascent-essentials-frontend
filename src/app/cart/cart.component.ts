@@ -31,9 +31,8 @@ import {RouterLink} from "@angular/router";
   styleUrl: './cart.component.sass'
 })
 export class CartComponent implements OnInit {
-  cartProducts: ProductResponse[] = [];
   cart!: Cart
-  pageSizeOptions: number[] = [5, 10, 25, 50];
+  cartProducts: ProductResponse[] = []
 
   constructor(
     private cartService: CartService,
