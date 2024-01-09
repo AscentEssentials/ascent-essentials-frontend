@@ -22,4 +22,9 @@ export class OrderService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token.token}`)
     return this.http.get<OrderResponse[]>(`${this.apiUrl}/orders`, {headers});
   }
+
+  getAllOrders(token: Token): Observable<OrderResponse[]> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token.token}`)
+    return this.http.get<OrderResponse[]>(`${this.apiUrl}/admin/orders`, {headers});
+  }
 }
