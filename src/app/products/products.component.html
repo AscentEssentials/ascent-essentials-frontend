@@ -37,16 +37,11 @@
 
   <div class="products-column">
     <div class="products-container">
-      <a *ngFor="let product of filteredPagedProducts"
+      <a *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 10, currentPage: pageIndex }"
          [routerLink]="['/product', product._id]">
         <app-product-card [product]="product"></app-product-card>
       </a>
     </div>
-    <mat-paginator [length]="filteredProducts.length"
-                   [pageSize]="pageSize"
-                   [pageIndex]="pageIndex"
-                   (page)="handlePageEvent($event)"
-                   aria-label="Select page">
-    </mat-paginator>
+    <pagination-controls (pageChange)="pageIndex = $event"></pagination-controls>
   </div>
 </div>
