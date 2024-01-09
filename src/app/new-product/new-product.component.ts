@@ -13,6 +13,7 @@ import {CategoryService} from "../category.service";
 import {SubcategoryResponse} from "../subcategory";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-new-product',
@@ -41,7 +42,7 @@ export class NewProductComponent implements OnInit {
   selectedImages: File[] = []
   subcategories: SubcategoryResponse[] = []
 
-  constructor(private fb: FormBuilder, private productService: ProductService, private permissionService: PermissionService, private categoryService: CategoryService) {
+  constructor(private snackBar: MatSnackBar, private fb: FormBuilder, private productService: ProductService, private permissionService: PermissionService, private categoryService: CategoryService) {
     this.newProductForm = this.fb.group({
       name: ['', Validators.required],
       brand: ['', Validators.required],
@@ -73,7 +74,13 @@ export class NewProductComponent implements OnInit {
         formData.append('images', image);
       }
     }
-    this.productService.createProduct(formData, this.permissionService.getToken()).subscribe()
+    this.productService.createProduct(formData, this.permissionService.getToken()).subscribe(_ => {
+      this.snackBar.open("New product added", 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar']
+      })
+    })
   }
 
   onFileSelected(event: any): void {
