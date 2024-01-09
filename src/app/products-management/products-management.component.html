@@ -4,7 +4,7 @@
     <button mat-button matSuffix (click)="search()">Search</button>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" [routerLink]="'/product/new'">Add Product</button>
+  <button mat-raised-button class="button" [routerLink]="'/product/new'">Add Product</button>
 </div>
 
 <mat-table [dataSource]="filteredProducts" class="mat-elevation-z8">

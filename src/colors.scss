@@ -6,3 +6,8 @@ $neutral-gray: #F5F5F5;  // Medium Gray
 $accent-blue: #536878;  // Steel Blue
 
 $highlight-orange: #FFB300;  // Dark Yellow
+
+.button {
+  background-color: $accent-blue;
+  color: white;
+}

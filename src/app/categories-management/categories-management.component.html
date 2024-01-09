@@ -17,7 +17,7 @@
     <mat-label>New Subcategory Description</mat-label>
     <input matInput formControlName="newDescription" />
   </mat-form-field>
-  <button mat-raised-button type="submit" [disabled]="editCategoryForm.invalid" (click)="submitEditCategoryForm()">Save</button>
+  <button mat-raised-button type="submit" class="button" [disabled]="editCategoryForm.invalid" (click)="submitEditCategoryForm()">Save</button>
 </form>
 
 <form [formGroup]="newCategoryForm" (ngSubmit)="submitNewCategoryForm()">
@@ -40,5 +40,5 @@
     </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button type="submit" [disabled]="newCategoryForm.invalid">Add Subcategory</button>
+  <button mat-raised-button class="button" type="submit" [disabled]="newCategoryForm.invalid">Add Subcategory</button>
 </form>
