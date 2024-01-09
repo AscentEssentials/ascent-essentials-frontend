@@ -31,7 +31,8 @@ import {PermissionService} from "../permission.service";
   styleUrl: './products-management.component.sass'
 })
 export class ProductsManagementComponent implements AfterViewInit {
-  displayedColumns: string[] = ['name', 'brand', 'actions'];
+  @ViewChild(MatPaginator) paginator!: MatPaginator
+  displayedColumns: string[] = ['name', 'brand', 'actions']
   products: ProductResponse[] = []
   searchTerm: string = '';
   filteredProducts: MatTableDataSource<ProductResponse> = new MatTableDataSource(this.products);
@@ -44,8 +45,6 @@ export class ProductsManagementComponent implements AfterViewInit {
       this.search()
     })
   }
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.filteredProducts.paginator = this.paginator;
