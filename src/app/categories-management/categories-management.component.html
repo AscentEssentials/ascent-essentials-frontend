@@ -1,4 +1,5 @@
-<form [formGroup]="editCategoryForm" (ngSubmit)="submitEditCategoryForm()">
+<form [formGroup]="editCategoryForm" (ngSubmit)="submitEditCategoryForm()" class="category-form">
+  <h1>Edit an existing category</h1>
   <mat-form-field appearance="outline">
     <mat-label>Choose Subcategory</mat-label>
     <mat-select formControlName="categoryId">
@@ -17,10 +18,12 @@
     <mat-label>New Subcategory Description</mat-label>
     <input matInput formControlName="newDescription" />
   </mat-form-field>
-  <button mat-raised-button type="submit" class="button" [disabled]="editCategoryForm.invalid" (click)="submitEditCategoryForm()">Save</button>
+
+  <button mat-raised-button type="submit" class="button" [disabled]="editCategoryForm.invalid">Save</button>
 </form>
 
-<form [formGroup]="newCategoryForm" (ngSubmit)="submitNewCategoryForm()">
+<form [formGroup]="newCategoryForm" (ngSubmit)="submitNewCategoryForm()" class="category-form">
+  <h1>Create a new category</h1>
   <mat-form-field appearance="outline">
     <mat-label>New Subcategory Name</mat-label>
     <input matInput formControlName="name" />
