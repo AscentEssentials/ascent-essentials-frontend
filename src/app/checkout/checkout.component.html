@@ -5,20 +5,20 @@
     <!-- Step 1: Credit Card Information -->
     <mat-step>
       <ng-template matStepLabel>Credit Card</ng-template>
-      <form>
+      <form [formGroup]="creditCardForm">
         <mat-form-field class="form-group" appearance="outline">
           <mat-label>Credit Card Number</mat-label>
-          <input matInput type="text" id="creditCardNumber" name="creditCardNumber" placeholder="Enter your credit card number">
+          <input matInput type="number" id="creditCardNumber" formControlName="creditCardNumber" placeholder="Enter your credit card number">
         </mat-form-field>
 
         <mat-form-field class="form-group" appearance="outline">
           <mat-label>Expiration Date</mat-label>
-          <input matInput type="text" id="expirationDate" name="expirationDate" placeholder="MM/YYYY">
+          <input matInput type="date" id="expirationDate" formControlName="creditCardExpirationDate" placeholder="MM/YYYY">
         </mat-form-field>
 
         <mat-form-field class="form-group" appearance="outline">
           <mat-label>CCV</mat-label>
-          <input matInput type="text" id="ccv" name="ccv" placeholder="Enter CCV">
+          <input matInput type="number" id="ccv" formControlName="ccv" placeholder="Enter CCV">
         </mat-form-field>
 
         <div>
@@ -30,13 +30,13 @@
     <!-- Step 2: Confirmation -->
     <mat-step>
       <ng-template matStepLabel>Confirmation</ng-template>
-      <form>
+      <form [formGroup]="couponForm">
         <div>
           <p>Thank you for your order!</p>
         </div>
         <mat-form-field class="form-group" appearance="outline">
           <mat-label>Coupon Code</mat-label>
-          <input matInput type="text" id="couponCode" name="couponCode" placeholder="Enter coupon code">
+          <input matInput type="text" id="couponCode" formControlName="couponCode" placeholder="Enter coupon code">
         </mat-form-field>
         <div>
           <button mat-raised-button color="warn" (click)="stepper.previous()">Back</button>

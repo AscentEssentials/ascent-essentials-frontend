@@ -1,7 +1,6 @@
-import {ObjectId} from "mongodb";
-
-export interface Order {
-  id: ObjectId,
-  date: Date,
-  price: number,
+export interface NewOrder {
+  creditCardNumber: number,
+  creditCardExpirationDate: Date,
+  CCV: number,
+  coupon: string,
 }
