@@ -95,6 +95,5 @@ export class ProductsComponent implements OnInit, OnChanges {
     const startIndex = this.pageIndex * this.pageSize
     const endIndex = startIndex + this.pageSize
     this.filteredPagedProducts = this.filteredProducts.slice(startIndex, endIndex)
-    console.log(this.filteredPagedProducts)
   }
 }
