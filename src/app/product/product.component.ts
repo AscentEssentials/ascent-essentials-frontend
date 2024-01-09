@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatButtonModule} from "@angular/material/button";
 import {CurrencyPipe, NgClass, NgForOf, NgOptimizedImage} from "@angular/common";
 import {FormsModule} from "@angular/forms";
@@ -31,6 +31,7 @@ export class ProductComponent implements OnInit {
   productId?: string
 
   currentImage: string = "../../assets/images/placeholder.jpg"
+  quantity: number = 1
 
   constructor(
     private snackBar: MatSnackBar,
@@ -57,13 +58,13 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    this.cartService.addToCart(this.productId!, this.permissionService.getToken().token).subscribe(_ => {
-      const message = `${this.product!.brand} ${this.product!.name}(s) added to the cart.`;
+    this.cartService.addProductToCart(this.productId!, this.permissionService.getToken().token).subscribe(_ => {
+      const message = `${this.product!.brand} ${this.product!.name}(s) added to the cart.`
       this.snackBar.open(message, 'Close', {
         duration: 5000,
         verticalPosition: 'bottom',
         panelClass: ['custom-snackbar']
-      });
+      })
     })
   }
 }

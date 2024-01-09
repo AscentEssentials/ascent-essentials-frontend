@@ -12,13 +12,13 @@
 
   <div class="product-info">
     <p class="price">Price: {{ product?.price | currency }}</p>
-    <p class="availability" [ngClass]="{'not-available': false}">{{ 'Available' }}</p>
+    <p class="availability" [ngClass]="{'not-available': product!.quantity < 0}">{{ 'Available' }}</p>
 
     <div class="quantity-container">
       <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" min="1" max="10">
+      <input type="number" id="quantity" min="1" max="10" [ngModel]="quantity">
     </div>
 
-    <button mat-button (click)="addToCart()" [disabled]="false">Add to Cart</button>
+    <button mat-button (click)="addToCart()" [disabled]="product!.quantity < 0">Add to Cart</button>
   </div>
 </div>
