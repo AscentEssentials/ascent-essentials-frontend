@@ -1,3 +1,16 @@
+## [1.14.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.13.0...1.14.0) (2024-01-09)
+
+
+### Features
+
+* now it is possible to add and remove products from cart ([31289b8](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/31289b8b7c54694160c6c7190b22dfd4d873f7c2))
+* redirect to checkout page when button is clicked ([bca8ee3](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/bca8ee3add7cc4097b4c6c95096f3ae3f6b4981d))
+
+
+### Bug Fixes
+
+* fix behavior ([dff865f](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/dff865ff4f33df32cf31cea4efc924293e2006e7))
+
 ## [1.13.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.12.0...1.13.0) (2024-01-08)
 
 
