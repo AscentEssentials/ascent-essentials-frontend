@@ -1,3 +1,39 @@
+## [1.15.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.14.0...1.15.0) (2024-01-09)
+
+
+### Features
+
+* added snack bars ([3bd7bc2](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/3bd7bc2f5d7372be49473c792bd7e67386d9d611))
+* now it is possible for the supplier to get the orders ([03c1152](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/03c1152ed2656791879df4d485ec1d9796a94bc8))
+* now it is possible to apply filters ([0fc7f16](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/0fc7f16ad4d6e0c0daca553d6e9377f49e09642d))
+* now it is possible to choose how many items add to cart ([9712241](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/9712241e946c15c99529dfcf8cbae848e382bd4a))
+* now it is possible to execute an order ([3dd7919](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/3dd791974af9d1846110210e1d7168e6461c0a70))
+* now it is possible to see the executed orders for the customer ([70492b1](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/70492b1fe0b95fa69f757ac8b0e3a15d8bec78b3))
+* now product paginator is working ([d786e26](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/d786e26515f84bd03f2d0cae87a6a2dcc8a1efad))
+* **partial:** improve products paginator ([38605e6](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/38605e6bc41ce4f2e1507ffc62f9850aeebd20d5))
+
+
+### Bug Fixes
+
+* fix orders table design ([91e7705](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/91e7705ac6d53544a754283f4e0ef012bf5a3369))
+
+
+### General maintenance
+
+* remove empty line ([a491c5f](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/a491c5fd66369f046485779630a2b16eb500ec3a))
+* remove log ([0709474](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/070947466658fadc724cdda5cdd70f818752c991))
+* remove spaces ([b71271d](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/b71271d84735fa70be8b9438963c946b97b784c2))
+
+
+### Refactoring
+
+* improve About Us section ([1097ab3](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/1097ab30c4d46718fdfd69212499b03fb938ff6f))
+* improve cart product list ([72b9312](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/72b9312be12e503503f11f56b1b9494d0bbeacb8))
+* improve categories management style ([0585869](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/05858697b48aaf724024b6c5ba40e7b05662236c))
+* improve new product style ([51181d6](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/51181d672da1c87f0db6cd1121499af2938c9a8c))
+* remove step from checkout ([fd8054f](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/fd8054f5ca90bc77646267213e0584ef2591d3f1))
+* unify buttons style ([ff39e64](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/ff39e64a6f011e68b2420bb437318d86d385aeed))
+
 ## [1.14.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.13.0...1.14.0) (2024-01-09)
 
 
