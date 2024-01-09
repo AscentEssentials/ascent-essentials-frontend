@@ -1,25 +1,48 @@
 <div class="container">
   <div class="filter-column">
     <div class="filter-container">
-      <form [formGroup]="priceFilterForm" (ngSubmit)="applyFilter()">
+      <form [formGroup]="filterForm" (ngSubmit)="applyFilters()">
         <mat-form-field appearance="outline" class="price-form">
-          <mat-label>Price Range</mat-label>
+          <mat-label>Minimum Price</mat-label>
           <input matInput type="number" placeholder="Min Price" formControlName="minPrice">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="price-form">
+          <mat-label>Maximum Price</mat-label>
           <input matInput type="number" placeholder="Max Price" formControlName="maxPrice">
         </mat-form-field>
-        <button mat-button type="submit" class="apply-button">Apply Filter</button>
+
+        <mat-form-field appearance="outline" class="price-form">
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="subCategoryId">
+            <mat-option *ngFor="let subcategory of subcategories" [value]="subcategory._id">
+              {{ subcategory.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="price-form">
+          <mat-label>Brand</mat-label>
+          <mat-select formControlName="brand">
+            <mat-option *ngFor="let brand of brands" [value]="brand">
+              {{ brand }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-button type="submit" class="apply-button">Apply Filters</button>
       </form>
     </div>
   </div>
 
   <div class="products-column">
     <div class="products-container">
-      <a *ngFor="let product of products"
+      <a *ngFor="let product of filteredProducts"
          [routerLink]="['/product', product._id]">
         <app-product-card [product]="product"></app-product-card>
       </a>
     </div>
-    <mat-paginator [length]="products.length"
+    <mat-paginator [length]="filteredProducts.length"
                    [pageSize]="10"
                    [pageSizeOptions]="[5, 10, 25, 100]"
                    aria-label="Select page">
