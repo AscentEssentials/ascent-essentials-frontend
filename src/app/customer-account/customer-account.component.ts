@@ -30,8 +30,7 @@ export class CustomerAccountComponent implements OnInit {
   pageSize = 5;
   pageSizeOptions: number[] = [5, 10, 25, 50];
 
-  constructor(private orderService: OrderService, private permissionService: PermissionService) {
-  }
+  constructor(private orderService: OrderService, private permissionService: PermissionService) {}
 
   ngOnInit(): void {
     this.orderService.getCustomerOrders(this.permissionService.getToken()).subscribe(orders => {
