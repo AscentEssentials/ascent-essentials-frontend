@@ -1,4 +1,4 @@
-<form [formGroup]="newProductForm" (ngSubmit)="submitForm()">
+<form [formGroup]="newProductForm" (ngSubmit)="submitForm()" class="product-form">
   <mat-form-field appearance="outline">
     <mat-label>Product Name</mat-label>
     <input matInput formControlName="name" />
@@ -36,5 +36,5 @@
   <mat-label>Select Images</mat-label>
   <input type="file" (change)="onFileSelected($event)" accept="image/*" multiple>
 
-  <button mat-raised-button type="submit" [disabled]="newProductForm.invalid">Add Product</button>
+  <button mat-raised-button class="button" type="submit" [disabled]="newProductForm.invalid">Add Product</button>
 </form>
