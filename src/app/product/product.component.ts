@@ -29,7 +29,6 @@ import {PermissionService} from "../permission.service";
 export class ProductComponent implements OnInit {
   product?: ProductResponse
   productId?: string
-
   currentImage: string = "../../assets/images/placeholder.jpg"
   quantity: number = 1
 
@@ -58,7 +57,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart() {
-    this.cartService.addProductToCart(this.productId!, this.permissionService.getToken().token).subscribe(_ => {
+    this.cartService.addProductToCart(this.productId!, this.quantity, this.permissionService.getToken().token).subscribe(_ => {
       const message = `${this.product!.brand} ${this.product!.name}(s) added to the cart.`
       this.snackBar.open(message, 'Close', {
         duration: 5000,

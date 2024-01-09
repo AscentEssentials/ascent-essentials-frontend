@@ -17,9 +17,9 @@ export class CartService {
     return this.http.get<Cart>(`${this.apiUrl}/cart`, {headers})
   }
 
-  addProductToCart(productId: string, token: string): Observable<Object> {
+  addProductToCart(productId: string, quantity: number, token: string): Observable<Object> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
-    return this.http.post(`${this.apiUrl}/cart/add`, {productId: productId},{headers})
+    return this.http.post(`${this.apiUrl}/cart/add`, {productId: productId, quantity: quantity},{headers})
   }
 
   updateProductQuantity(productId: string, quantity: number, token: string): Observable<Object> {
