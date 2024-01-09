@@ -10,6 +10,7 @@ import {SubcategoryResponse} from "../subcategory";
 import {CategoryService} from "../category.service";
 import {PermissionService} from "../permission.service";
 import {Category} from "../category";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-categories-management',
@@ -35,7 +36,7 @@ export class CategoriesManagementComponent implements OnInit {
   existingSubcategories: SubcategoryResponse[] = []
   existingCategories: Category[] = [];
 
-  constructor(private fb: FormBuilder, private categoryService: CategoryService, private permissionService: PermissionService) {
+  constructor(private snackBar: MatSnackBar, private fb: FormBuilder, private categoryService: CategoryService, private permissionService: PermissionService) {
     this.editCategoryForm = this.fb.group({
       categoryId: ['', Validators.required],
       newName: ['', Validators.required],
@@ -73,6 +74,11 @@ export class CategoriesManagementComponent implements OnInit {
       description: newDescription
     }
     this.categoryService.editSubcategory(newSubcategory, this.permissionService.getToken().token).subscribe(_ => {
+      this.snackBar.open("Category edited", 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar']
+      })
       this.loadCategories()
     })
   }
@@ -89,6 +95,11 @@ export class CategoriesManagementComponent implements OnInit {
       },
       this.permissionService.getToken().token
     ).subscribe(_ => {
+      this.snackBar.open("New category created", 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar']
+      })
       this.loadCategories()
     })
   }
