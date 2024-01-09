@@ -27,4 +27,9 @@ export class OrderService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token.token}`)
     return this.http.get<OrderResponse[]>(`${this.apiUrl}/admin/orders`, {headers});
   }
+
+  editOrderStatus(orderId: string, state: string, token: Token): Observable<Object> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token.token}`)
+    return this.http.patch(`${this.apiUrl}/admin/orders/${orderId}/status`, {status: state},{headers})
+  }
 }

@@ -37,4 +37,8 @@ export class OrdersManagementComponent implements OnInit {
       this.orders = orders.filter(o => o.status.toLowerCase() != "arrived")
     })
   }
+
+  onStatusChange(order: OrderResponse): void {
+    this.orderService.editOrderStatus(order._id, order.status, this.permissionService.getToken()).subscribe()
+  }
 }
