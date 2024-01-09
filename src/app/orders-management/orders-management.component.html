@@ -1,1 +1,49 @@
-<p>orders-management works!</p>
+<h1>Orders</h1>
+
+<mat-table [dataSource]="orders" class="mat-elevation-z8">
+
+  <!-- Order Number Column -->
+  <ng-container matColumnDef="orderNumber">
+    <mat-header-cell *matHeaderCellDef> Order Number </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order._id }} </mat-cell>
+  </ng-container>
+
+  <!-- Date Column -->
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.createdAt | date:'short' }} </mat-cell>
+  </ng-container>
+
+  <!-- Total Price Column -->
+  <ng-container matColumnDef="totalPrice">
+    <mat-header-cell *matHeaderCellDef> Total Price </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.orderTotal | currency }} </mat-cell>
+  </ng-container>
+
+  <!-- State Column -->
+  <ng-container matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.status }} </mat-cell>
+  </ng-container>
+
+  <!-- State Edit Column -->
+  <ng-container matColumnDef="stateEdit">
+    <mat-header-cell *matHeaderCellDef> Edit State </mat-header-cell>
+    <mat-cell *matCellDef="let order">
+      <mat-form-field>
+        <mat-label>State</mat-label>
+        <mat-select [(value)]="order.status">
+          <mat-option value="to be shipped">To be shipped</mat-option>
+          <mat-option value="shipped">Shipped</mat-option>
+          <mat-option value="arrived">Arrived</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['orderNumber', 'date', 'totalPrice', 'state', 'stateEdit']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['orderNumber', 'date', 'totalPrice', 'state', 'stateEdit'];"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="orders.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>
