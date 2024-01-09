@@ -6,7 +6,6 @@ import {MatTableDataSource, MatTableModule} from "@angular/material/table";
 import {ProductResponse} from "../product";
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 import {FormsModule} from "@angular/forms";
-import {MatDialog} from "@angular/material/dialog";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {RouterLink} from "@angular/router";
@@ -37,7 +36,7 @@ export class ProductsManagementComponent implements AfterViewInit {
   searchTerm: string = '';
   filteredProducts: MatTableDataSource<ProductResponse> = new MatTableDataSource(this.products);
 
-  constructor(public dialog: MatDialog, private snackBar: MatSnackBar, private productService: ProductService, private permissionService: PermissionService) {}
+  constructor(private snackBar: MatSnackBar, private productService: ProductService, private permissionService: PermissionService) {}
 
   deleteProduct(product: ProductResponse): void {
     this.productService.deleteProductById(product._id, this.permissionService.getToken()).subscribe(_ => {

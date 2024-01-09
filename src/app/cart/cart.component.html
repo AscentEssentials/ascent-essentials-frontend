@@ -6,48 +6,47 @@
 
   <div *ngIf="cartProducts.length > 0">
     <div class="table-container">
-      <table mat-table [dataSource]="cartProducts" class="mat-elevation-z8">
+      <mat-table [dataSource]="cartProducts" class="mat-elevation-z8">
         <!-- Image Column -->
         <ng-container matColumnDef="image">
-          <th mat-header-cell *matHeaderCellDef> Image </th>
-          <td mat-cell *matCellDef="let item">
+          <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+          <mat-cell *matCellDef="let item">
             <img src="http://localhost:3000/product/image/{{item.images[0]}}" alt="{{ item.brand }} {{ item.name }}" class="product-image">
-          </td>
+          </mat-cell>
         </ng-container>
 
         <!-- Product Name Column -->
         <ng-container matColumnDef="productName">
-          <th mat-header-cell *matHeaderCellDef> Product Name </th>
-          <td mat-cell *matCellDef="let item">{{ item.brand }} {{ item.name }} </td>
+          <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
+          <mat-cell *matCellDef="let item">{{ item.brand }} {{ item.name }} </mat-cell>
         </ng-container>
 
         <!-- Price Column -->
         <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef> Price </th>
-          <td mat-cell *matCellDef="let item"> {{ item.price | currency }} </td>
+          <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+          <mat-cell *matCellDef="let item"> {{ item.price | currency }} </mat-cell>
         </ng-container>
 
         <!-- Quantity Column -->
         <ng-container matColumnDef="quantity">
-          <th mat-header-cell *matHeaderCellDef> Quantity </th>
-          <td mat-cell *matCellDef="let item">{{ item.quantity }} </td>
+          <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+          <mat-cell *matCellDef="let item">{{ item.quantity }} </mat-cell>
         </ng-container>
 
         <!-- Remove Column -->
         <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let item">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let item">
             <button mat-icon-button (click)="removeFromCart(item)">
               <mat-icon>delete</mat-icon>
             </button>
-          </td>
+          </mat-cell>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="['image', 'productName', 'price', 'quantity', 'actions']"></tr>
-        <tr mat-row *matRowDef="let row; columns: ['image', 'productName', 'price', 'quantity', 'actions'];"></tr>
-      </table>
+        <mat-header-row *matHeaderRowDef="['image', 'productName', 'price', 'quantity', 'actions']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['image', 'productName', 'price', 'quantity', 'actions'];"></mat-row>
+      </mat-table>
     </div>
-    <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
 
     <div class="total-price">Total Price: {{ cart.cartTotal | currency }}</div>
 
