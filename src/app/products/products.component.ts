@@ -13,6 +13,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {SubcategoryResponse} from "../subcategory";
 import {CategoryService} from "../category.service";
 import {ProductService} from "../product.service";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @Component({
   selector: 'app-products',
@@ -27,7 +28,8 @@ import {ProductService} from "../product.service";
     HttpClientModule,
     RouterLink,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxPaginationModule,
   ],
   providers: [CategoryService, ProductService],
   templateUrl: './products.component.html',
@@ -36,12 +38,10 @@ import {ProductService} from "../product.service";
 export class ProductsComponent implements OnInit, OnChanges {
   @Input() products: ProductResponse[] = []
   filteredProducts: ProductResponse[]
-  filteredPagedProducts: ProductResponse[] = []
   brands: string[] = []
   subcategories: SubcategoryResponse[] = []
   filterForm: FormGroup
-  pageSize: number = 20
-  pageIndex: number = 0
+  pageIndex: number = 1
 
   constructor(private formBuilder: FormBuilder, private categoryService: CategoryService) {
     this.filterForm = this.formBuilder.group({
@@ -52,7 +52,6 @@ export class ProductsComponent implements OnInit, OnChanges {
     });
     this.brands = this.products.map(p => p.brand)
     this.filteredProducts = [...this.products]
-    this.setProductsPage()
   }
 
   ngOnInit(): void {
@@ -66,9 +65,6 @@ export class ProductsComponent implements OnInit, OnChanges {
     this.brands = [...changes['products'].currentValue].map(p => p.brand).filter(function(elem, index, self) {
       return index === self.indexOf(elem)
     })
-    this.pageSize = changes['products'].currentValue.length
-    this.pageIndex = 0
-    this.setProductsPage()
   }
 
   applyFilters() {
@@ -82,18 +78,5 @@ export class ProductsComponent implements OnInit, OnChanges {
           && product.subCategoryId == subcategoryId
       }
     )
-    this.pageIndex = 0
-    this.setProductsPage()
-  }
-
-  handlePageEvent(e: PageEvent) {
-    this.pageIndex = e.pageIndex
-    this.setProductsPage()
-  }
-
-  setProductsPage() {
-    const startIndex = this.pageIndex * this.pageSize
-    const endIndex = startIndex + this.pageSize
-    this.filteredPagedProducts = this.filteredProducts.slice(startIndex, endIndex)
   }
 }
