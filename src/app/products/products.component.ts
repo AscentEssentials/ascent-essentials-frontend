@@ -1,8 +1,8 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {ProductResponse} from "../product";
 import {ProductCardComponent} from "../product-card/product-card.component";
 import {NgForOf} from "@angular/common";
-import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatPaginatorModule, PageEvent} from "@angular/material/paginator";
 import {MatInputModule} from "@angular/material/input";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
@@ -36,9 +36,12 @@ import {ProductService} from "../product.service";
 export class ProductsComponent implements OnInit, OnChanges {
   @Input() products: ProductResponse[] = []
   filteredProducts: ProductResponse[]
+  filteredPagedProducts: ProductResponse[] = []
   brands: string[] = []
   subcategories: SubcategoryResponse[] = []
   filterForm: FormGroup
+  pageSize: number = 20
+  pageIndex: number = 0
 
   constructor(private formBuilder: FormBuilder, private categoryService: CategoryService) {
     this.filterForm = this.formBuilder.group({
@@ -49,6 +52,7 @@ export class ProductsComponent implements OnInit, OnChanges {
     });
     this.brands = this.products.map(p => p.brand)
     this.filteredProducts = [...this.products]
+    this.setProductsPage()
   }
 
   ngOnInit(): void {
@@ -59,11 +63,15 @@ export class ProductsComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.filteredProducts = [...changes['products'].currentValue]
-    this.brands = [...changes['products'].currentValue].map(p => p.brand)
+    this.brands = [...changes['products'].currentValue].map(p => p.brand).filter(function(elem, index, self) {
+      return index === self.indexOf(elem)
+    })
+    this.pageSize = changes['products'].currentValue.length
+    this.pageIndex = 0
+    this.setProductsPage()
   }
 
   applyFilters() {
-    this.filteredProducts = [...this.products]
     const minPrice = this.filterForm.value.minPrice
     const maxPrice = this.filterForm.value.maxPrice
     const subcategoryId = this.filterForm.value.subCategoryId
@@ -74,5 +82,19 @@ export class ProductsComponent implements OnInit, OnChanges {
           && product.subCategoryId == subcategoryId
       }
     )
+    this.pageIndex = 0
+    this.setProductsPage()
+  }
+
+  handlePageEvent(e: PageEvent) {
+    this.pageIndex = e.pageIndex
+    this.setProductsPage()
+  }
+
+  setProductsPage() {
+    const startIndex = this.pageIndex * this.pageSize
+    const endIndex = startIndex + this.pageSize
+    this.filteredPagedProducts = this.filteredProducts.slice(startIndex, endIndex)
+    console.log(this.filteredPagedProducts)
   }
 }
