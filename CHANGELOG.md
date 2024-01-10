@@ -1,3 +1,28 @@
+## [1.16.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.15.0...1.16.0) (2024-01-10)
+
+
+### Features
+
+* add error messages on login and checkout ([650102b](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/650102b378071ec03f123f00819b2af525c9b341))
+* now it is possible to add coupons ([886ae95](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/886ae95593e29b78aadcb10c406b4b7e32445f74))
+* now supplier can edit order states ([6c50c95](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/6c50c95af0b938bf66277111e4ee61bd28844c08))
+
+
+### Bug Fixes
+
+* now coupon is correctly sent to the backend ([75769c7](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/75769c73ad10e0e929699cc7180dcd2b9b7e204f))
+* now coupon is correctly sent to the backend ([5f7091a](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5f7091a29222c9c99ed020cadee7b7df11348a98))
+
+
+### General maintenance
+
+* **deps-dev:** bump follow-redirects from 1.15.3 to 1.15.4 ([5f44b14](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/5f44b143b23355ca8cbacd2ec0a4c40f2ddcab74))
+
+
+### Refactoring
+
+* improve header style ([ec4b099](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/ec4b09984c5ac460acd0e44540a77fe8b4669c84))
+
 ## [1.15.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.14.0...1.15.0) (2024-01-09)
 
 
