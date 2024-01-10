@@ -1,3 +1,21 @@
+## [1.17.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.16.0...1.17.0) (2024-01-10)
+
+
+### Features
+
+* now it is possible to manage notifications ([289c27a](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/289c27aa8f2cd5634e3857ffa9d7463c8633a649))
+
+
+### Tests
+
+* add tests for cart service ([575d128](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/575d128b0d15e1d13cb8d1e7a023505d14603051))
+* add tests for services ([84c6808](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/84c68085212289d069e79e042d6ffe9e04fc9569))
+
+
+### Build and continuous integration
+
+* add check job ([d85ea97](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/d85ea97d6836c269adacfe32b7e5aa7d11fbac9b))
+
 ## [1.16.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.15.0...1.16.0) (2024-01-10)
 
 
