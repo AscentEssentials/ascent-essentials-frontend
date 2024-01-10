@@ -15,6 +15,7 @@ import {CategoriesManagementComponent} from "./categories-management/categories-
 import {OrdersManagementComponent} from "./orders-management/orders-management.component";
 import {UserAccountComponent} from "./user-account/user-account.component";
 import {isUserCustomer, isUserLogged, isUserSupplier} from "./user-permission.guard";
+import {CouponManagementComponent} from "./coupon-management/coupon-management.component";
 
 export const routes: Routes = [
   {
@@ -110,6 +111,17 @@ export const routes: Routes = [
         path: 'management',
         component: OrdersManagementComponent,
         title: 'Orders Management',
+        canActivate: [isUserSupplier],
+      },
+    ]
+  },
+  {
+    path: 'coupons',
+    children: [
+      {
+        path: 'management',
+        component: CouponManagementComponent,
+        title: 'Coupons Management',
         canActivate: [isUserSupplier],
       },
     ]
