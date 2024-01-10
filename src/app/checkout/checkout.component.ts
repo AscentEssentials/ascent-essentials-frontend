@@ -55,6 +55,12 @@ export class CheckoutComponent {
           panelClass: ['custom-snackbar']
         })
       })
+    }, _ => {
+      this.snackBar.open("Error! Wrong coupon code!", 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar']
+      })
     })
   }
 }
