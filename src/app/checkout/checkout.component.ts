@@ -44,7 +44,7 @@ export class CheckoutComponent {
     formData.append("creditCardNumber", this.creditCardForm.value.creditCardNumber)
     formData.append("creditCardExpirationDate", this.creditCardForm.value.creditCardExpirationDate)
     formData.append("ccv", this.creditCardForm.value.CCV)
-    formData.append("coupon", this.couponForm.value.coupon)
+    formData.append("couponCode", this.couponForm.value.coupon)
     this.orderService.createOrder(formData, this.permissionService.getToken()).subscribe(_ => {
       this.router.navigate(["/user/cart"]).then(_ => {
         this.snackBar.open("Order executed!", 'Close', {
