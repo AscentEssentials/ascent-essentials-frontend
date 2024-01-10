@@ -1,0 +1,47 @@
+<h1>Coupons</h1>
+
+<mat-table [dataSource]="coupons" class="mat-elevation-z8">
+
+  <!-- coupon code Column -->
+  <ng-container matColumnDef="code">
+    <mat-header-cell *matHeaderCellDef> Coupon Code </mat-header-cell>
+    <mat-cell *matCellDef="let coupon"> {{ coupon.code }} </mat-cell>
+  </ng-container>
+
+  <!-- Discount Column -->
+  <ng-container matColumnDef="discount">
+    <mat-header-cell *matHeaderCellDef> Discount </mat-header-cell>
+    <mat-cell *matCellDef="let coupon"> {{ coupon.discountAmount }} </mat-cell>
+  </ng-container>
+
+  <!-- Remove Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let coupon">
+      <button mat-icon-button (click)="deleteCoupon(coupon)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['code', 'discount', 'actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['code', 'discount', 'actions']"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="coupons.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+</mat-paginator>
+
+<form [formGroup]="newCouponForm" (ngSubmit)="submitNewCouponForm()" class="coupon-form">
+  <h1>Create a new coupon</h1>
+  <mat-form-field appearance="outline">
+    <mat-label>Coupon Code</mat-label>
+    <input matInput formControlName="code" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Discount</mat-label>
+    <input type="number" min="5" matInput formControlName="discount" />
+  </mat-form-field>
+
+  <button mat-raised-button class="button" type="submit" [disabled]="newCouponForm.invalid">Add Coupon</button>
+</form>
