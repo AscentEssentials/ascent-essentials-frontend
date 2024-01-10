@@ -1,3 +1,10 @@
+export interface NewOrder {
+  creditCardNumber: number,
+  creditCardExpirationDate: Date,
+  ccv: number,
+  couponCode: string
+}
+
 export interface OrderResponse {
   _id: string;
   userId: string;
