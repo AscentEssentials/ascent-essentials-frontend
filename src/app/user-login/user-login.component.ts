@@ -8,6 +8,7 @@ import {FormControl, ReactiveFormsModule} from "@angular/forms";
 import {User} from "../user";
 import {Router} from "@angular/router";
 import {PermissionService} from "../permission.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-user-login',
@@ -36,7 +37,7 @@ export class UserLoginComponent {
   registerUserZipCode: FormControl = new FormControl('')
   registerUserTelephoneNumber: FormControl = new FormControl('')
 
-  constructor(private router: Router, private userService: UserService, private permissionService: PermissionService) { }
+  constructor(private router: Router, private userService: UserService, private permissionService: PermissionService, private snackBar: MatSnackBar) { }
 
   registerUser() {
     let user: User = {
@@ -66,6 +67,12 @@ export class UserLoginComponent {
       this.userService.getUserDetails(token.token).subscribe(user => {
         this.permissionService.registerPermission(token, user.isAdmin)
         this.router.navigate(["/user/account"])
+      })
+    }, _ => {
+      this.snackBar.open("Error! Wrong credentials!", 'Close', {
+        duration: 5000,
+        verticalPosition: 'bottom',
+        panelClass: ['custom-snackbar']
       })
     })
   }
