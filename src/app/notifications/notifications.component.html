@@ -1,12 +1,18 @@
 <div class="notifications-container">
-  <mat-card>
+  <mat-card *ngFor="let notification of notifications">
     <mat-card-header>
-      <mat-card-title>Notifications</mat-card-title>
+      <mat-card-title>New Notification</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div *ngFor="let notification of notifications">
-        {{ notification.message }} {{ notification.timestamp }}
-      </div>
+      <p>
+        {{ notification.message }}
+      </p>
+      <p>
+        {{ notification.createdAt }}
+      </p>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="deleteNotification(notification)">DELETE</button>
+    </mat-card-actions>
   </mat-card>
 </div>
