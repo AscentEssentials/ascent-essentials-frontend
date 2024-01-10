@@ -9,6 +9,7 @@ import {OrderService} from "../order.service";
 import {PermissionService} from "../permission.service";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {NewOrder} from "../order";
 
 @Component({
   selector: 'app-checkout',
@@ -40,12 +41,13 @@ export class CheckoutComponent {
     });
   }
   executeOrder() {
-    const formData = new FormData()
-    formData.append("creditCardNumber", this.creditCardForm.value.creditCardNumber)
-    formData.append("creditCardExpirationDate", this.creditCardForm.value.creditCardExpirationDate)
-    formData.append("ccv", this.creditCardForm.value.CCV)
-    formData.append("couponCode", this.couponForm.value.coupon)
-    this.orderService.createOrder(formData, this.permissionService.getToken()).subscribe(_ => {
+    const newOrder: NewOrder = {
+      creditCardNumber: this.creditCardForm.value.creditCardNumber,
+      creditCardExpirationDate: this.creditCardForm.value.creditCardExpirationDate,
+      ccv: this.creditCardForm.value.ccv,
+      couponCode: this.couponForm.value.couponCode
+    }
+    this.orderService.createOrder(newOrder, this.permissionService.getToken()).subscribe(_ => {
       this.router.navigate(["/user/cart"]).then(_ => {
         this.snackBar.open("Order executed!", 'Close', {
           duration: 5000,
