@@ -4,7 +4,7 @@
   <div class="image-container">
     <img class="product-image" [src]="currentImage" alt="{{product?.name}}">
     <div class="thumbnail-container">
-      <img *ngFor="let image of product?.images" class="thumbnail" src="http://localhost:3000/product/image/{{image}}" alt="{{product?.name}}" (click)="changeImage(image)">
+      <img *ngFor="let image of product?.images" class="thumbnail" src="{{apiUrl}}/product/image/{{image}}" alt="{{product?.name}}" (click)="changeImage(image)">
     </div>
   </div>
 

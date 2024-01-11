@@ -1,5 +1,5 @@
 <mat-card class="product-card">
-  <img mat-card-image class="product-image" src="http://localhost:3000/product/image/{{ product!.images[0] }}" alt="{{ product?.name }}">
+  <img mat-card-image class="product-image" src="{{apiUrl}}/product/image/{{ product!.images[0] }}" alt="{{ product?.name }}">
   <mat-card-content>
     <p class="product-name">{{ product?.brand }} {{ product?.name }}</p>
     <p class="product-price">{{ product?.price }}$</p>
