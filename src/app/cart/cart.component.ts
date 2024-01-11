@@ -11,6 +11,7 @@ import {PermissionService} from "../permission.service";
 import {Cart} from "../cart";
 import {ProductService} from "../product.service";
 import {RouterLink} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-cart',
@@ -33,6 +34,7 @@ import {RouterLink} from "@angular/router";
 export class CartComponent implements OnInit {
   cart!: Cart
   cartProducts: ProductResponse[] = []
+  apiUrl = environment.apiUrl;
 
   constructor(
     private cartService: CartService,

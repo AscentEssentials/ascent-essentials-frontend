@@ -9,6 +9,7 @@ import {ActivatedRoute} from "@angular/router";
 import {ProductService} from "../product.service";
 import {CartService} from "../cart.service";
 import {PermissionService} from "../permission.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-product',
@@ -31,6 +32,7 @@ export class ProductComponent implements OnInit {
   productId?: string
   currentImage: string = "../../assets/images/placeholder.jpg"
   quantity: number = 1
+  apiUrl = environment.apiUrl
 
   constructor(
     private snackBar: MatSnackBar,
@@ -45,7 +47,7 @@ export class ProductComponent implements OnInit {
         this.productId = params['productId']
         this.productService.getProductById(this.productId!).subscribe(product => {
           this.product = product
-          this.currentImage = "http://localhost:3000/product/image/" + product.images[0]
+          this.currentImage = `${this.apiUrl}/product/image/${product.images[0]}`
           }
         )
       }
@@ -53,7 +55,7 @@ export class ProductComponent implements OnInit {
   }
 
   changeImage(image: string) {
-    this.currentImage = "http://localhost:3000/product/image/" + image;
+    this.currentImage = `${this.apiUrl}/product/image/${image}`
   }
 
   addToCart() {

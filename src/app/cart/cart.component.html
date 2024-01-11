@@ -11,7 +11,7 @@
         <ng-container matColumnDef="image">
           <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
           <mat-cell *matCellDef="let item">
-            <img src="http://localhost:3000/product/image/{{item.images[0]}}" alt="{{ item.brand }} {{ item.name }}" class="product-image">
+            <img src="{{apiUrl}}/product/image/{{item.images[0]}}" alt="{{ item.brand }} {{ item.name }}" class="product-image">
           </mat-cell>
         </ng-container>
 

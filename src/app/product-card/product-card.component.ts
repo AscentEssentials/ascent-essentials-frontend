@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ProductResponse} from "../product";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-product-card',
@@ -15,4 +16,5 @@ import {MatButtonModule} from "@angular/material/button";
 })
 export class ProductCardComponent {
   @Input() product: ProductResponse | undefined;
+  apiUrl = environment.apiUrl;
 }
