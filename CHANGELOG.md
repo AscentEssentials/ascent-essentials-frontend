@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.17.0...1.17.1) (2024-01-11)
+
+
+### Bug Fixes
+
+* remove hardcoded URLs ([75b634f](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/75b634f1b65fe83b633149a8e30d4d74aa8f8057))
+
 ## [1.17.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.16.0...1.17.0) (2024-01-10)
 
 
