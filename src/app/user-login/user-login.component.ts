@@ -54,7 +54,9 @@ export class UserLoginComponent {
     this.userService.registerUser(user).subscribe(token => {
       this.userService.getUserDetails(token.token).subscribe(user => {
         this.permissionService.registerPermission(token, user.isAdmin)
-        this.router.navigate(["/user/account"])
+        this.router.navigate(["/user/account"]).then(_ => {
+          window.location.reload()
+        })
       })
     })
   }
@@ -66,7 +68,9 @@ export class UserLoginComponent {
     }).subscribe(token => {
       this.userService.getUserDetails(token.token).subscribe(user => {
         this.permissionService.registerPermission(token, user.isAdmin)
-        this.router.navigate(["/user/account"])
+        this.router.navigate(["/user/account"]).then(_ => {
+          window.location.reload()
+        })
       })
     }, _ => {
       this.snackBar.open("Error! Wrong credentials!", 'Close', {

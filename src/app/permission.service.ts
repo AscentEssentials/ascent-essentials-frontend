@@ -21,8 +21,7 @@ export class PermissionService {
   }
 
   deletePermission() {
-    this.cookieService.delete("accessToken")
-    this.cookieService.delete("isAdmin")
+    this.cookieService.deleteAll()
   }
 
   isUserLogged(): boolean {
