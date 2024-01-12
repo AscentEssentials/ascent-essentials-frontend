@@ -1,3 +1,10 @@
+## [1.18.0](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.17.1...1.18.0) (2024-01-12)
+
+
+### Features
+
+* implement push notifications ([d95da49](https://github.com/AscentEssentials/ascent-essentials-frontend/commit/d95da49598948d1d28141b41615466649f050fd2))
+
 ## [1.17.1](https://github.com/AscentEssentials/ascent-essentials-frontend/compare/1.17.0...1.17.1) (2024-01-11)
 
 
