@@ -40,6 +40,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "semantic-release-preconfigured-conventional-commits": "1.1.85",
-    "typescript": "~5.2.2"
+    "typescript": "~5.3.0"
   }
 }
